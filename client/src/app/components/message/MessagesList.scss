@@ -1,0 +1,27 @@
+@import '../../_sass/abstracts/index';
+@import '../../_sass/vendor/index';
+
+.messages-list {
+  & > div {
+    margin-bottom: $grid-gutter-width/2;   
+
+    & .message__body {
+      background: lighten($teal, 40%);
+    }
+
+    &:nth-of-type(odd) {
+      & .message__body {
+        background: lighten($indigo, 40%);
+      }
+    }
+  }
+
+  & .message__body {
+    padding-top: $grid-gutter-width/2;
+    padding-bottom: $grid-gutter-width/2;
+  }
+
+  & .message__sender {
+    font-weight: 700;
+  }
+}

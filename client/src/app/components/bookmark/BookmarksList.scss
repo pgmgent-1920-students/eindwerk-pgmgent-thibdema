@@ -1,0 +1,27 @@
+@import '../../_sass/abstracts/index';
+
+.bookmarks-list {
+  & > div {
+    margin-bottom: $grid-gutter-width;
+    padding: 0 $grid-gutter-width/6;
+  }
+
+  & .bookmark {
+    height: 100%;
+
+    &__picture {
+      display: block;
+      width: 100%;
+      height: 162px;
+      overflow: hidden;
+      background: rgba(255, 255, 255, 1);
+
+      & > img {
+        width: 100%;
+        height: 100%;
+
+        object-fit: cover;
+      }
+    }
+  }
+}
