@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/eindwerk-pgmgent-thibdema/static/css/main.0424014b.chunk.css",
-    "main.js": "/eindwerk-pgmgent-thibdema/static/js/main.bab516c4.chunk.js",
-    "main.js.map": "/eindwerk-pgmgent-thibdema/static/js/main.bab516c4.chunk.js.map",
-    "runtime-main.js": "/eindwerk-pgmgent-thibdema/static/js/runtime-main.655cf7df.js",
-    "runtime-main.js.map": "/eindwerk-pgmgent-thibdema/static/js/runtime-main.655cf7df.js.map",
-    "static/js/2.cc8bf3ed.chunk.js": "/eindwerk-pgmgent-thibdema/static/js/2.cc8bf3ed.chunk.js",
-    "static/js/2.cc8bf3ed.chunk.js.map": "/eindwerk-pgmgent-thibdema/static/js/2.cc8bf3ed.chunk.js.map",
-    "index.html": "/eindwerk-pgmgent-thibdema/index.html",
-    "precache-manifest.b1f7ef4a43c6dc0fec9f6c87e66faf72.js": "/eindwerk-pgmgent-thibdema/precache-manifest.b1f7ef4a43c6dc0fec9f6c87e66faf72.js",
-    "service-worker.js": "/eindwerk-pgmgent-thibdema/service-worker.js",
-    "static/css/main.0424014b.chunk.css.map": "/eindwerk-pgmgent-thibdema/static/css/main.0424014b.chunk.css.map",
-    "static/js/2.cc8bf3ed.chunk.js.LICENSE.txt": "/eindwerk-pgmgent-thibdema/static/js/2.cc8bf3ed.chunk.js.LICENSE.txt"
+    "main.css": "/corona-festival/static/css/main.0424014b.chunk.css",
+    "main.js": "/corona-festival/static/js/main.ec9cf3e4.chunk.js",
+    "main.js.map": "/corona-festival/static/js/main.ec9cf3e4.chunk.js.map",
+    "runtime-main.js": "/corona-festival/static/js/runtime-main.a90954fd.js",
+    "runtime-main.js.map": "/corona-festival/static/js/runtime-main.a90954fd.js.map",
+    "static/js/2.cc8bf3ed.chunk.js": "/corona-festival/static/js/2.cc8bf3ed.chunk.js",
+    "static/js/2.cc8bf3ed.chunk.js.map": "/corona-festival/static/js/2.cc8bf3ed.chunk.js.map",
+    "index.html": "/corona-festival/index.html",
+    "precache-manifest.f33aad49fccc3dcb8ff5015e19a82ff5.js": "/corona-festival/precache-manifest.f33aad49fccc3dcb8ff5015e19a82ff5.js",
+    "service-worker.js": "/corona-festival/service-worker.js",
+    "static/css/main.0424014b.chunk.css.map": "/corona-festival/static/css/main.0424014b.chunk.css.map",
+    "static/js/2.cc8bf3ed.chunk.js.LICENSE.txt": "/corona-festival/static/js/2.cc8bf3ed.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.655cf7df.js",
+    "static/js/runtime-main.a90954fd.js",
     "static/js/2.cc8bf3ed.chunk.js",
     "static/css/main.0424014b.chunk.css",
-    "static/js/main.bab516c4.chunk.js"
+    "static/js/main.ec9cf3e4.chunk.js"
   ]
 }
