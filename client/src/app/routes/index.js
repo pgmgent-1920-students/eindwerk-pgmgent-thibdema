@@ -12,3 +12,4 @@ export const AUTH_SIGN_OUT = '/auth/signout';
 export const REGISTER = '/register';
 
 export const PREFIX = 'corona-festival';
+export const HREF_ORIGIN = window.location.origin;
