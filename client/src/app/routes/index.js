@@ -9,7 +9,7 @@ export const STREAM = '/stream';
 export const SETTINGS = '/settings';
 export const AUTH_SIGN_IN = '/auth/signin';
 export const AUTH_SIGN_OUT = '/auth/signout';
-export const REGISTER = '/register';
+export const REGISTER = '/auth/register';
 
 export const PREFIX = 'corona-festival';
 export const HREF_ORIGIN = window.location.origin;

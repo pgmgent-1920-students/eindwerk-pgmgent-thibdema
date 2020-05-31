@@ -3,6 +3,7 @@ import Home from './Home';
 import MessagesPage from './MessagesPage';
 import PokemonsPage from './PokemonsPage';
 import SignInPage from './SignInPage';
+import Register from './Register';
 
 export {
   BookmarksPage,
@@ -10,4 +11,5 @@ export {
   MessagesPage,
   PokemonsPage,
   SignInPage,
+  Register,
 }

@@ -1,7 +1,6 @@
 import React, { } from 'react';
 import { Link, NavLink  } from 'react-router-dom';
 
-import Register from './Register';
 import CourtesyNavigation from './CourtesyNavigation';
 import Logo from './Logo';
 
@@ -43,9 +42,10 @@ const Header = ({children}) => {
             <li className="nav-item">
               <NavLink to={Routes.STREAM} className="nav-link" activeClassName="active">Stream</NavLink>
             </li> 
+            <li className="nav-item">
+              <CourtesyNavigation />
+            </li>
           </ul>
-          <CourtesyNavigation />
-          <Register />
         </div>
       </nav>
     </header>
