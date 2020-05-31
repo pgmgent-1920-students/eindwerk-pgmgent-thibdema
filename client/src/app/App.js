@@ -17,7 +17,7 @@ function App() {
       <FirebaseProvider>
         <AuthProvider>
           <FirestoreProvider>
-            <Router basename={Routes.PREFIX}>
+            <Router basename="/eindwerk-pgmgent-thibdema">
               <Switch>
                 <RouteWithLayout exact path={Routes.LANDING} layout={ BaseLayout } component={ Home }/>
                 <Redirect from={Routes.HOME} to={Routes.LANDING}/>
