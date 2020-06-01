@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
-  "homepage": "https://pgmgent-1920-students.github.io/eindwerk-pgmgent-thibdema/",
+  "homepage": "",
   "dependencies": {
     "faker": "^4.1.0",
     "firebase": "^7.14.3",
