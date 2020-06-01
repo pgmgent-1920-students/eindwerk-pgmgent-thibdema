@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/eindwerk-pgmgent-thibdema/precache-manifest.b362c973225d22cd42148778348c5f43.js"
+  "/eindwerk-pgmgent-thibdema/precache-manifest.238daf21de394329261dc1d14f3c1084.js"
 );
 
 self.addEventListener('message', (event) => {
