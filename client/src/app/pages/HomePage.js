@@ -1,8 +1,8 @@
 import React, { } from 'react';
 
-import './Home.scss';
+import './HomePage.scss';
 
-const Home = ({children}) => {
+const HomePage = ({children}) => {
   return (
     <div className="page page--home">
       <section className="pt-4 pt-md-11 featured">
@@ -24,4 +24,4 @@ const Home = ({children}) => {
   );
 };
 
-export default Home;
+export default HomePage;

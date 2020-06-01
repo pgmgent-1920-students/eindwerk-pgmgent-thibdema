@@ -19,17 +19,12 @@ const CourtesyNavigation = ({children}) => {
               <img className="profile__picture" src={currentUser.photoURL} />
             </button>
             <div className="dropdown-menu dropdown-menu-right">
-              <Link to={Routes.SETTINGS} className="dropdown-item">Settings</Link>
+              <Link to={Routes.HOME} className="dropdown-item">Home</Link>
               <div className="dropdown-divider"></div>
               <a className="dropdown-item" href="#" onClick={signOut}>Logout</a>
             </div>
           </div>
-        : 
-          <div className="navbar-nav align-items-center">
-            <Link className="nav-link" to={Routes.AUTH_SIGN_IN}>Sign In</Link>
-            /
-            <Link className="nav-link" to={Routes.REGISTER}>Register</Link>
-          </div>
+        : <Link className="nav-link" to={Routes.AUTH_SIGN_IN}>Sign In</Link>
         }        
       </li>
     </ul>

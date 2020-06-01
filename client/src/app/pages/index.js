@@ -1,15 +1,13 @@
 import BookmarksPage from './BookmarksPage';
-import Home from './Home';
+import HomePage from './HomePage';
 import MessagesPage from './MessagesPage';
 import PokemonsPage from './PokemonsPage';
 import SignInPage from './SignInPage';
-import Register from './Register';
 
 export {
   BookmarksPage,
-  Home,
+  HomePage,
   MessagesPage,
   PokemonsPage,
   SignInPage,
-  Register,
 }
