@@ -63,8 +63,17 @@ const AuthProvider = ({children}) => {
     return await auth.signOut();
   };
 
+  const registerWithEmailAndPassword = async (email, password, displayName) => {
+    try {
+      await auth.createUserWithEmailAndPassword(email, password);
+      return 'succes';
+    } catch (error) {
+      return error;
+    }
+  };
+
   return (
-    <AuthContext.Provider value={{currentUser,signInWithEmailAndPassword,signOut}}>
+    <AuthContext.Provider value={{currentUser,signInWithEmailAndPassword,signOut, registerWithEmailAndPassword}}>
       {children}
     </AuthContext.Provider>
   );

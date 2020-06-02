@@ -4,7 +4,8 @@ import { useAuth } from '../services/firebase/auth.services';
 import './Register.scss';
 
 const Register = ({children}) => {
-  const [passwordConfirmation, setPasswordConfirmation] = useState('');
+  const [error, setError] = useState('');
+  const [confirmation, setConfirmation] = useState(false);
   const [registerForm, setRegisterForm] = useState({
     txtUsername: '',
     txtEmail: '',
@@ -12,12 +13,17 @@ const Register = ({children}) => {
     txtConfirmPassword: ''
   });
 
-  const {currentUser,signInWithEmailAndPassword,signOut} = useAuth();
+  const {currentUser,signInWithEmailAndPassword,signOut, registerWithEmailAndPassword} = useAuth();
 
   const handleSubmit = async (ev) => {
     ev.preventDefault();
-    (registerForm.txtPassword === registerForm.txtConfirmPassword) ? await signInWithEmailAndPassword(registerForm.txtEmail, registerForm.txtPassword)
-      : setPasswordConfirmation('You gave in 2 different passwords.');
+    (registerForm.txtPassword === registerForm.txtConfirmPassword) ? registerData()
+      : setError('You gave in 2 different passwords.');
+  }
+
+  const registerData = async () => {
+    const dataProcess = await registerWithEmailAndPassword(registerForm.txtEmail, registerForm.txtPassword);
+    (dataProcess == 'succes') ? setConfirmation(`You're account is made. Activate you're account with your email address.`) : setError(dataProcess.message) ;
   }
 
   const handleInputChange = async (ev) => {
@@ -33,7 +39,8 @@ const Register = ({children}) => {
         <div className="row">
           <div className="col-12 offset-md-2 col-md-8 offset-lg-3 col-lg-6">
             <form onSubmit={(ev) => handleSubmit(ev)}>
-              {(passwordConfirmation) ? <div className="alert alert-danger" role="alert">{passwordConfirmation}</div> : ''}
+              {(confirmation && !error) ? <div className="alert alert-success" role="alert">{confirmation}</div> : '' }
+              {(error && !confirmation) ? <div className="alert alert-danger" role="alert">{error}</div> : '' }
               <div className="form-group">
                 <label htmlFor="txtUsername">Username</label>
                 <input required type="text" className="form-control" id="txtUsername" name="txtUsername" onChange={handleInputChange} value={registerForm.txtUsername} />
