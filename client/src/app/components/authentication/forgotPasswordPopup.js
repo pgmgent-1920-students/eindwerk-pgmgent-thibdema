@@ -17,7 +17,7 @@ const ForgotPasswordPopup = () => {
 
     const result = await resetPassword(forgotPasswordForm.txtForgotEmail);console.log(result);
     (result) ? setConfirmation(false) : setError(false) ;
-    (result) ? setError(result.content) : setConfirmation(`You're new password is sended to you're emailaddress.`);
+    (result) ? setError(result.content) : setConfirmation(`Your new password is sended to you're emailaddress.`);
   }
 
   const handleInputChangeForgotPassword = async (ev) => {
