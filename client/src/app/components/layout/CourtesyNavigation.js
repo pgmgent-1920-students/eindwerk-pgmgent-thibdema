@@ -16,12 +16,12 @@ const CourtesyNavigation = ({children}) => {
         {!!currentUser
         ? <div className="btn-group">
             <button type="button" className="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <img className="profile__picture" src={currentUser.photoURL} />
+              <img className="profile__picture" src={currentUser.photoURL} alt={currentUser.displayName} />
             </button>
             <div className="dropdown-menu dropdown-menu-right">
               <Link to={Routes.SETTINGS} className="dropdown-item">Settings</Link>
               <div className="dropdown-divider"></div>
-              <a className="dropdown-item" href="#" onClick={signOut}>Logout</a>
+              <a className="dropdown-item" onClick={signOut}>Logout</a>
             </div>
           </div>
         : 

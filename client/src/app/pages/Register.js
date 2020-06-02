@@ -1,5 +1,9 @@
 import React, {useState} from 'react';
+import { Redirect } from 'react-router-dom';
+
 import { useAuth } from '../services/firebase/auth.services';
+
+import * as Routes from '../routes';
 
 import './Register.scss';
 
@@ -13,7 +17,7 @@ const Register = ({children}) => {
     txtConfirmPassword: ''
   });
 
-  const {currentUser,signInWithEmailAndPassword,signOut, registerWithEmailAndPassword} = useAuth();
+  const {currentUser, registerWithEmailAndPassword} = useAuth();
 
   const handleSubmit = async (ev) => {
     ev.preventDefault();
@@ -23,7 +27,7 @@ const Register = ({children}) => {
 
   const registerData = async () => {
     const dataProcess = await registerWithEmailAndPassword(registerForm.txtEmail, registerForm.txtPassword);
-    (dataProcess == 'succes') ? setConfirmation(`You're account is made. Activate you're account with your email address.`) : setError(dataProcess.message) ;
+    (dataProcess === 'succes') ? setConfirmation(`You're account is made. Activate you're account with your email address.`) : setError(dataProcess.message) ;
   }
 
   const handleInputChange = async (ev) => {
@@ -35,6 +39,7 @@ const Register = ({children}) => {
 
   return (
     <div className="page page--sign-up">
+      {(!!currentUser) ? <Redirect from={Routes.HOME} to={Routes.LANDING}/> : '' }
       <div className="container">
         <div className="row">
           <div className="col-12 offset-md-2 col-md-8 offset-lg-3 col-lg-6">

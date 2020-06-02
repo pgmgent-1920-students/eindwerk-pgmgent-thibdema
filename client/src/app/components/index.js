@@ -1,7 +1,5 @@
-import SEOSearchForm from './SEOSearchForm';
-import SEOSearchResult from './SEOSearchResult';
+import {ForgotPasswordPopup} from './authentication';
 
 export {
-  SEOSearchForm,
-  SEOSearchResult,
+  ForgotPasswordPopup,
 }

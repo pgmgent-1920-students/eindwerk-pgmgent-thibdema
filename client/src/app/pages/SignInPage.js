@@ -1,22 +1,27 @@
 import React, {useState} from 'react';
+import { Redirect } from 'react-router-dom';
+
 import { useAuth } from '../services/firebase/auth.services';
+import * as Routes from '../routes';
+
+import { ForgotPasswordPopup } from '../components';
 
 import './Signin.scss';
 
 const SignInPage = ({children}) => {
+
   const [loginError, setLoginError] = useState('');
 
   const [signInForm, setSignInForm] = useState({
     txtEmail: '',
     txtPassword: ''
   });
-  const {currentUser,signInWithEmailAndPassword,signOut} = useAuth();
+  const {currentUser,signInWithEmailAndPassword} = useAuth();
 
   const handleSubmit = async (ev) => {
     ev.preventDefault();
 
     const result = await signInWithEmailAndPassword(signInForm.txtEmail, signInForm.txtPassword);
-    console.log(result);
     (result.content) ? setLoginError(result.content) : setLoginError(false);
   }
 
@@ -29,6 +34,7 @@ const SignInPage = ({children}) => {
 
   return (
     <div className="page page--sign-in">
+      {(!!currentUser) ? <Redirect from={Routes.HOME} to={Routes.LANDING}/> : '' }
       <div className="container">
         <div className="row">
           <div className="col-12 offset-md-2 col-md-8 offset-lg-3 col-lg-6">
@@ -44,7 +50,11 @@ const SignInPage = ({children}) => {
                 <input type="password" className="form-control" id="txtPassword" name="txtPassword" onChange={handleInputChange} value={signInForm.txtPassword} />
               </div>
               <button type="submit" className="btn btn-primary">Sign In</button>
+              <span className="forgot-password text-info" data-toggle="modal" data-target="#forgotPassword">
+                Forgot password ?
+              </span>
             </form>
+            <ForgotPasswordPopup/>
           </div>
         </div>
       </div>      

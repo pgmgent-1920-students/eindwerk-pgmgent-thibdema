@@ -26,6 +26,22 @@ const AuthProvider = ({children}) => {
     }
   }, []);
 
+  const resetPassword = async (email) => {
+    try {
+      return await auth.sendPasswordResetEmail(email);
+    } catch (error) {
+      switch (error.code) {
+        case "auth/user-not-found":
+          error.content = "There is no account registered with this emailaddress.";
+          break;
+        default:
+          error.content = error.message;
+          break;
+      }
+      return error;
+    }
+  }
+
   const signInWithEmailAndPassword = async (email, password) => {
     try {
       return await auth.signInWithEmailAndPassword(email, password);
@@ -73,7 +89,7 @@ const AuthProvider = ({children}) => {
   };
 
   return (
-    <AuthContext.Provider value={{currentUser,signInWithEmailAndPassword,signOut, registerWithEmailAndPassword}}>
+    <AuthContext.Provider value={{currentUser,signInWithEmailAndPassword,signOut,registerWithEmailAndPassword,resetPassword}}>
       {children}
     </AuthContext.Provider>
   );
