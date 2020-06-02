@@ -10,6 +10,7 @@ export const SETTINGS = '/settings';
 export const AUTH_SIGN_IN = '/auth/signin';
 export const AUTH_SIGN_OUT = '/auth/signout';
 export const REGISTER = '/auth/register';
+export const ACCOUNT = '/account';
 
 export const PREFIX = '/eindwerk-pgmgent-thibdema';
 export const HREF_ORIGIN = window.location.origin;

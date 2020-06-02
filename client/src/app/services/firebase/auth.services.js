@@ -24,7 +24,7 @@ const AuthProvider = ({children}) => {
     return () => {
       unsubscribe();
     }
-  }, []);
+  }, [auth]);
 
   const resetPassword = async (email) => {
     try {
@@ -82,11 +82,22 @@ const AuthProvider = ({children}) => {
   const registerWithEmailAndPassword = async (email, password, displayName) => {
     try {
       await auth.createUserWithEmailAndPassword(email, password);
+      await registerOtherData(displayName);
       return 'succes';
     } catch (error) {
       return error;
     }
   };
+
+  const registerOtherData = (displayName) => {
+    const user = auth.currentUser;
+    user.updateProfile({
+      displayName: displayName,
+      photoURL: "https://w7.pngwing.com/pngs/36/880/png-transparent-avatar-series-wykop-pl-designer-graphic-artist-designer-face-cartoon-computer-programming-thumbnail.png"
+    })
+      .then(() => console.log('update succesfull'))
+      .catch((error) => console.log(error));
+  }
 
   return (
     <AuthContext.Provider value={{currentUser,signInWithEmailAndPassword,signOut,registerWithEmailAndPassword,resetPassword}}>

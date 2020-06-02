@@ -26,7 +26,7 @@ const Register = ({children}) => {
   }
 
   const registerData = async () => {
-    const dataProcess = await registerWithEmailAndPassword(registerForm.txtEmail, registerForm.txtPassword);
+    const dataProcess = await registerWithEmailAndPassword(registerForm.txtEmail, registerForm.txtPassword, registerForm.txtUsername);
     (dataProcess === 'succes') ? setConfirmation(`You're account is made. Activate you're account with your email address.`) : setError(dataProcess.message) ;
   }
 
@@ -61,7 +61,7 @@ const Register = ({children}) => {
               </div>
               <div className="form-group">
                 <label htmlFor="txtPassword">Confirm password</label>
-                <input required type="password" className="form-control" id="txtPassword" name="txtConfirmPassword" onChange={handleInputChange} value={registerForm.txtConfirmPassword} />
+                <input required type="password" className="form-control" id="txtConfirmPassword" name="txtConfirmPassword" onChange={handleInputChange} value={registerForm.txtConfirmPassword} />
               </div>
               <button type="submit" className="btn btn-primary">Sign In</button>
             </form>
