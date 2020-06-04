@@ -3,6 +3,10 @@ header .logo {
     padding: 1rem;
 }
 
+.logo {
+    width: 100%;
+}
+
 @media (max-width: 1600px) {
     header .logo {
         padding: 0.5rem 1rem;

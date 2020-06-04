@@ -46,6 +46,21 @@ const FirestoreProvider = ({children}) => {
     return pokemons;
   };
 
+  const getGenres = async () => {
+    const query = db.collection('genres');
+    const querySnapshot = await query.get();
+    const genres = querySnapshot.docs.map((doc) => {
+      return doc.data();
+    });
+    return genres;
+  };
+
+  const addLivestream = async (livestream) => {
+    const ref = db.collection('livestreams');
+    const docRef = await ref.add(livestream);
+    return docRef;
+  };
+
   const addBookmark = async (bookmark) => {
     const ref = db.collection('bookmarks');
     const docRef = await ref.add(bookmark);
@@ -53,7 +68,7 @@ const FirestoreProvider = ({children}) => {
   };
 
   return (
-    <FirestoreContext.Provider value={{addBookmark, getBookmarks, getMessages, getPokemons}}>
+    <FirestoreContext.Provider value={{addBookmark, getBookmarks, getMessages, getPokemons, getGenres, addLivestream}}>
       {children}
     </FirestoreContext.Provider>
   );

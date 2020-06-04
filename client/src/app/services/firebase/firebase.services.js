@@ -13,7 +13,7 @@ const FirebaseProvider = ({children}) => {
     <FirebaseContext.Provider value={{app}}>
       {children}
     </FirebaseContext.Provider>
-  )
+  );
 };
 
 export {

@@ -26,6 +26,7 @@
     "delete:bookmarks": "babel-node collection_delete.js bookmarks 50 --debug --presets airbnb",
     "delete:messages": "babel-node collection_delete.js messages 50 --debug --presets airbnb",
     "delete:pokemons": "babel-node collection_delete.js pokemons 50 --debug --presets airbnb",
-    "delete:users": "babel-node users_delete.js --debug --presets airbnb"
+    "delete:users": "babel-node users_delete.js --debug --presets airbnb",
+    "add:genres": "babel-node genres_seeder.js --debug --presets airbnb"
   }
 }

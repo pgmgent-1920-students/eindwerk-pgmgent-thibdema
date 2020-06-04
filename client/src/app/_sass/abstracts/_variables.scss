@@ -1,5 +1,4 @@
-$font-family-source-sans-pro: 'Source Sans Pro', sans-serif;
-
+$font-family-jost: 'Jost', sans-serif;
 /* 
  * Customize Bootstrap
 */
@@ -9,8 +8,19 @@ $body-bg: #fff;
 $body-color: #111;
 
 // Typography
-$font-family-base: $font-family-source-sans-pro;
+$font-family-base: $font-family-jost;
 
 // Grid
 $grid-columns: 12;
 $grid-gutter-width: 64px;
+
+:root {
+    --grey-blue: #45526E;
+    --dark-blue: #212c3d;
+    --fb-blue: #1d6dce;
+    --in-purple: #9354b5;
+    --tw-blue: #00bbff;
+    --li-blue: #2671da;
+    --yt-red: #ff0000;
+}
+

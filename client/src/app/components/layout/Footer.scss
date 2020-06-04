@@ -1,6 +1,92 @@
 @import '../../_sass/vendor/bootstrap';
 
-.app-footer {
-  background: $gray-900;
-  color: $gray-100;
+.footer {
+    .author {
+        transition: 0.3s;
+        &:hover {
+            transition: 0.3s;
+            color: var(--dark-blue);
+            text-decoration: none;
+        }
+    }
+
+    .logo {
+        width: 80%;
+        &-title {
+            margin-top: 0rem !important;
+        }
+    }
+    &-description {
+        margin-left: 1%;
+    }
+
+    &-content {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+    
+    &-copyright {
+        padding-top: 1rem;
+        padding-bottom: 2rem;
+        &-structure {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+
+    .social-media {
+        i {
+            transition: 0.3s;
+            margin-left: 1rem;
+            font-size: 1.5rem;
+            color: #9f9f9f;
+            &.fa {
+                &-facebook-f:hover {
+                    transition: 0.3s;
+                    color: var(--fb-blue);
+                } 
+                &-instagram:hover {
+                    transition: 0.3s;
+                    color: var(--in-purple);
+                }
+                &-twitter:hover {
+                    transition: 0.3s;
+                    color: var(--tw-blue);
+                } 
+                &-linkedin-in:hover {
+                    transition: 0.3s;
+                    color: var(--li-blue);
+                } 
+                &-youtube:hover {
+                    transition: 0.3s;
+                    color: var(--yt-red);
+                } 
+            }
+        }
+    }
+
+    ul {
+        padding: 0;
+        list-style-type: none;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .footer {
+      &-copyright {
+          &-structure {
+              flex-direction: column;
+              align-items: center;
+              text-align: center;
+          }
+      }
+
+      &-content {
+        text-align: center;
+      }
+      .social-media {
+          margin-top: 1rem;
+      }
+    }
 }
