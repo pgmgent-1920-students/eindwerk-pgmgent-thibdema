@@ -22,6 +22,10 @@ const Stream = () => {
     fetchData();    
   }, [getGenres]);
 
+  const convertDate = (date) => {
+    const newDate = new Date(date).toISOString();
+    return newDate;
+  }
 
   const handleSubmit = (ev) => {
     ev.preventDefault();
@@ -33,7 +37,8 @@ const Stream = () => {
       thumbnail: formData.get('thumbnailLink'),
       genre: formData.get('genre'),
       description: formData.get('description'),
-      expirationDate: formData.get('expirationDate'),
+      startDate: convertDate(formData.get('startDate')),
+      expirationDate: convertDate(formData.get('expirationDate')),
       owner: currentUser.displayName,
       ownerThumbnail: currentUser.photoURL,
     };
@@ -62,6 +67,10 @@ const Stream = () => {
             <input required type="text" minLength="8" maxLength="200" name="thumbnailLink" className="form-control" id="thumbnailStream" placeholder="Thumbnail for the stream"/>
           </div>
           <div className="form-row">
+            <div className="form-group col-md-4">
+              <label htmlFor="startDate">Start date</label>
+              <input required type="datetime-local" name="startDate" className="form-control" id="startDate"/>
+            </div>
             <div className="form-group col-md-4">
               <label htmlFor="expirationDate">Expiration date</label>
               <input required type="datetime-local" name="expirationDate" className="form-control" id="expirationDate"/>

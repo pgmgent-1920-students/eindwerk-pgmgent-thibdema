@@ -1,0 +1,2 @@
+Adding verified when stream is added 
+Show streams on homepage
