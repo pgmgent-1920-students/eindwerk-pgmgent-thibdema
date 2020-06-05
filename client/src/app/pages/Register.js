@@ -38,7 +38,7 @@ const Register = ({children}) => {
   };
 
   return (
-    <div className="page page--sign-up">
+    <div className="page big-padding sign-up">
       {(!!currentUser) ? <Redirect from={Routes.HOME} to={Routes.LANDING}/> : '' }
       <div className="container">
         <div className="row">

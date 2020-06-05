@@ -1,0 +1,61 @@
+.DefaultCard {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--bg-dark-blue);
+    color: var(--white);
+    text-decoration: none;
+
+    &:hover {
+        color: var(--white);
+        text-decoration: none;
+    }
+
+    .left-part {
+        width: 50%;
+        .thumbnail {
+            height: 25rem;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            width: 100%;
+        }
+
+
+    }
+
+    .stream {
+        width: 45%;
+        text-align: left !important;
+        margin: 2rem 0;
+
+        .owner {
+            display: flex;
+            align-items: center;
+    
+            &__thumbnail {
+                border-radius: 100%;
+                width: 4rem;
+                margin-right: 1rem;
+            }
+    
+            &__displayName {
+                text-transform: capitalize;
+                font-size: 3.5rem;
+            }
+        }
+
+        &__title {
+            font-size: 2.5rem;
+        }
+
+        &__genre {
+            font-size: 2rem;
+            text-decoration: underline;
+        }
+
+        &__description {
+            font-size: 1.5rem;
+            text-transform: capitalize;
+        }
+    }
+}

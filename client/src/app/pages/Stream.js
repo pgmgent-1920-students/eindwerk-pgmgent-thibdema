@@ -49,7 +49,7 @@ const Stream = () => {
   };
 
   return(
-    <div className="stream">
+    <div className="page stream">
       {(!!currentUser) ? '' : <Redirect to={Routes.AUTH_SIGN_IN} /> }
       <div className="container">
         <h1>Add stream</h1>

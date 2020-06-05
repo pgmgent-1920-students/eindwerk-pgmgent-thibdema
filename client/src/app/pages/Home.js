@@ -1,16 +1,20 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import {useAuth, useFirestore} from '../services';
+
+import { DefaultCard } from '../components';
 
 import './Home.scss';
 
 const Home = ({children}) => {
   const {getLivestreams} = useFirestore();
 
+  const [livestreams, setLivestreams] = useState(false);
+
   useEffect(() => {
     const fetchLivestreams = async () => {
       const data = await getLivestreams();
-      console.log(data)
+      setLivestreams(data);
     }
 
     fetchLivestreams();
@@ -23,7 +27,7 @@ const Home = ({children}) => {
   };
 
   return (
-    <div className="page page--home container">
+    <div className="page--home">
       <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
         <ol className="carousel-indicators">
           <li data-target="#carouselExampleIndicators" data-slide-to="0" className="active"></li>
@@ -31,23 +35,26 @@ const Home = ({children}) => {
           <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
         </ol>
         <div className="carousel-inner" data-interval="10000">
-          <div className="carousel-item active">
-            <img className="d-block w-100" src={bg.bg1} alt="First slide"/>
-            <div class="carousel-caption d-none d-md-block">
+          <div className="carousel-item active" style={{backgroundImage: `url(${bg.bg1})`}}>
+            {/* <img className="d-block w-100" src={bg.bg1} alt="First slide"/> */}
+            <div className="carousel-caption d-none d-md-block">
+              {(livestreams) ? <DefaultCard data={livestreams[0]} /> : 'Loading'}
               <h5>...</h5>
               <p>...</p>
             </div>
           </div>
-          <div className="carousel-item">
-            <img className="d-block w-100" src={bg.bg2} alt="Second slide"/>
-            <div class="carousel-caption d-none d-md-block">
+          <div className="carousel-item" style={{backgroundImage: `url(${bg.bg2})`}}>
+            {/* <img className="d-block w-100" src={bg.bg2} alt="Second slide"/> */}
+            <div className="carousel-caption d-none d-md-block">
+              {(livestreams) ? <DefaultCard data={livestreams[1]} /> : 'Loading'}
               <h5>...</h5>
               <p>...</p>
             </div>
           </div>
-          <div className="carousel-item">
-            <img className="d-block w-100" src={bg.bg3} alt="Third slide"/>
-            <div class="carousel-caption d-none d-md-block">
+          <div className="carousel-item" style={{backgroundImage: `url(${bg.bg3})`}}>
+            {/* <img className="d-block w-100" src={bg.bg3} alt="Third slide"/> */}
+            <div className="carousel-caption d-none d-md-block">
+              {(livestreams) ? <DefaultCard data={livestreams[2]} /> : 'Loading'}
               <h5>...</h5>
               <p>...</p>
             </div>

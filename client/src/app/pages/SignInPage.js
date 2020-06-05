@@ -33,7 +33,7 @@ const SignInPage = ({children}) => {
   };
 
   return (
-    <div className="page page--sign-in">
+    <div className="page big-padding signin">
       {(!!currentUser) ? <Redirect from={Routes.HOME} to={Routes.LANDING}/> : '' }
       <div className="container">
         <div className="row">
