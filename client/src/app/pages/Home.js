@@ -16,25 +16,52 @@ const Home = ({children}) => {
     fetchLivestreams();
   }, []);
 
-
+  const bg = {
+    bg1: 'https://images.unsplash.com/photo-1500305614571-ae5b6592e65d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1055&q=80',
+    bg2: 'https://images.unsplash.com/photo-1507120410856-1f35574c3b45?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80',
+    bg3: 'https://images.unsplash.com/photo-1544194215-541c2d3561a4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80',
+  };
 
   return (
-    <div className="page page--home">
-      <section className="pt-4 pt-md-11 featured">
-        <div className="container">
-          <div className="row align-items-center">
-            <div className="col-12 col-md-5 col-lg-6 order-md-2">
-              Iets anders              
+    <div className="page page--home container">
+      <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
+        <ol className="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" className="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div className="carousel-inner" data-interval="10000">
+          <div className="carousel-item active">
+            <img className="d-block w-100" src={bg.bg1} alt="First slide"/>
+            <div class="carousel-caption d-none d-md-block">
+              <h5>...</h5>
+              <p>...</p>
             </div>
-            <div className="col-12 col-md-7 col-lg-6 order-md-1 aos-init aos-animate">
-              <h1 className="display-3 text-center text-md-left">
-                 <span className="font-weight-bold">Firebase React Boilerplate</span>. <br />
-                Firebase everything.
-              </h1>              
+          </div>
+          <div className="carousel-item">
+            <img className="d-block w-100" src={bg.bg2} alt="Second slide"/>
+            <div class="carousel-caption d-none d-md-block">
+              <h5>...</h5>
+              <p>...</p>
+            </div>
+          </div>
+          <div className="carousel-item">
+            <img className="d-block w-100" src={bg.bg3} alt="Third slide"/>
+            <div class="carousel-caption d-none d-md-block">
+              <h5>...</h5>
+              <p>...</p>
             </div>
           </div>
         </div>
-      </section>
+        <a className="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span className="sr-only">Previous</span>
+        </a>
+        <a className="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span className="carousel-control-next-icon" aria-hidden="true"></span>
+          <span className="sr-only">Next</span>
+        </a>
+      </div>
     </div>
   );
 };
