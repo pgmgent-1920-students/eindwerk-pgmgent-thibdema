@@ -13,5 +13,4 @@ export const REGISTER = '/auth/register';
 export const ACCOUNT = '/account';
 export const SPECSTREAM = '/stream/specific/:streamID';
 
-export const PREFIX = '/eindwerk-pgmgent-thibdema';
 export const HREF_ORIGIN = window.location.origin;
