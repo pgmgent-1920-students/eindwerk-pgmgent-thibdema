@@ -14,9 +14,9 @@ const Home = ({children}) => {
   useEffect(() => {
     const fetchLivestreams = async () => {
       const data = await getLivestreams();
+      console.log(data);
       setLivestreams(data);
     }
-
     fetchLivestreams();
   }, []);
 

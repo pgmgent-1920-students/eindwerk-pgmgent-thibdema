@@ -68,15 +68,37 @@ const FirestoreProvider = ({children}) => {
     const livestreams = [];
     querySnapshot.docs.map((doc) => {
       const data = doc.data();
-      const constructor = {
-        ...data,
-        id: doc.id,
-      };
       if(data.expirationDate > currentDate && data.startDate < currentDate) {
+        const constructor = {
+          ...data,
+          id: doc.id,
+        };
+
         livestreams.push(constructor);
       }
     });
-    return livestreams;
+    return sortLivestreams(livestreams);
+  };
+
+  const sortLivestreams = (data) => {
+    // Newest first
+    data.sort((a, b) => {
+      let fa = a.startDate;
+      let fb = b.startDate;
+  
+      if(fa < fb) {
+        return 1
+      } else {
+        return -1;
+      } 
+    });
+    return data;
+  }
+
+  const getSpecificStream = async (docID) => {
+    const ref = db.collection('livestreams').doc(docID);
+    const querySnapshot = await ref.get();
+    return querySnapshot.data();
   };
 
   const addBookmark = async (bookmark) => {
@@ -86,7 +108,7 @@ const FirestoreProvider = ({children}) => {
   };
 
   return (
-    <FirestoreContext.Provider value={{addBookmark, getBookmarks, getMessages, getPokemons, getGenres, addLivestream, getLivestreams}}>
+    <FirestoreContext.Provider value={{addBookmark, getBookmarks, getMessages, getPokemons, getGenres, addLivestream, getLivestreams, getSpecificStream}}>
       {children}
     </FirestoreContext.Provider>
   );

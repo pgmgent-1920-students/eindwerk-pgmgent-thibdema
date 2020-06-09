@@ -3,6 +3,7 @@ import MessagesPage from './MessagesPage';
 import Stream from './Stream';
 import SignInPage from './SignInPage';
 import Register from './Register';
+import SpecificStream from './SpecificStream';
 
 export {
   Home,
@@ -10,4 +11,5 @@ export {
   Stream,
   SignInPage,
   Register,
+  SpecificStream
 }
