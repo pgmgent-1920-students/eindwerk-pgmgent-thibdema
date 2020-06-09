@@ -6,7 +6,7 @@ import * as Routes from '../routes';
 
 import { ForgotPasswordPopup } from '../components';
 
-import './Signin.scss';
+import './SigninPage.scss';
 
 const SignInPage = ({children}) => {
 

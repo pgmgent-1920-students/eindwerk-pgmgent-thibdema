@@ -1,15 +1,15 @@
-import Home from './Home';
+import HomePage from './HomePage';
 import MessagesPage from './MessagesPage';
-import Stream from './Stream';
+import StreamPage from './StreamPage';
 import SignInPage from './SignInPage';
-import Register from './Register';
-import SpecificStream from './SpecificStream';
+import RegisterPage from './RegisterPage';
+import SpecificStreamPage from './SpecificStreamPage';
 
 export {
-  Home,
+  HomePage,
   MessagesPage,
-  Stream,
+  StreamPage,
   SignInPage,
-  Register,
-  SpecificStream
+  RegisterPage,
+  SpecificStreamPage
 }

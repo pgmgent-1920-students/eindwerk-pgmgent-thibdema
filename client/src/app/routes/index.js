@@ -13,4 +13,5 @@ export const REGISTER = '/auth/register';
 export const ACCOUNT = '/account';
 export const SPECSTREAM = '/stream/specific/:streamID';
 
+export const ROUTERPREFIX = process.env.REACT_APP_ROUTER_PREFIX;
 export const HREF_ORIGIN = window.location.origin;

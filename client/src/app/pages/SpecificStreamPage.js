@@ -4,9 +4,9 @@ import ReactHtmlParser from 'react-html-parser'
 
 import { useAuth, useFirestore } from '../services';
 
-import './SpecificStream.scss';
+import './SpecificStreamPage.scss';
 
-const SpecificStream = () => {
+const SpecificStreamPage = () => {
   const [streamData, setStreamData] = useState(false);
   let { streamID } = useParams();
   const {getSpecificStream} = useFirestore();
@@ -45,4 +45,4 @@ const SpecificStream = () => {
     </div>
   );
 }
-export default SpecificStream;
+export default SpecificStreamPage;

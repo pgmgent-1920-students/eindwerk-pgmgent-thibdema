@@ -62,7 +62,8 @@ const FirestoreProvider = ({children}) => {
   };
 
   const getLivestreams = async () => {
-    const currentDate = new Date().toISOString();
+    const currentDate = Date.now();
+    console.log(currentDate)
     const ref = db.collection('livestreams');
     const querySnapshot = await ref.get();
     const livestreams = [];

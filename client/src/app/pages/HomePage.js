@@ -4,9 +4,9 @@ import {useAuth, useFirestore} from '../services';
 
 import { DefaultCard } from '../components';
 
-import './Home.scss';
+import './HomePage.scss';
 
-const Home = ({children}) => {
+const HomePage = ({children}) => {
   const {getLivestreams} = useFirestore();
 
   const [livestreams, setLivestreams] = useState(false);
@@ -38,7 +38,7 @@ const Home = ({children}) => {
           <div className="carousel-item active" style={{backgroundImage: `url(${bg.bg1})`}}>
             {/* <img className="d-block w-100" src={bg.bg1} alt="First slide"/> */}
             <div className="carousel-caption d-none d-md-block">
-              {(livestreams) ? <DefaultCard data={livestreams[0]} /> : 'Loading'}
+              {(livestreams[0]) ? <DefaultCard data={livestreams[0]} /> : 'Loading'}
               <h5>...</h5>
               <p>...</p>
             </div>
@@ -46,7 +46,7 @@ const Home = ({children}) => {
           <div className="carousel-item" style={{backgroundImage: `url(${bg.bg2})`}}>
             {/* <img className="d-block w-100" src={bg.bg2} alt="Second slide"/> */}
             <div className="carousel-caption d-none d-md-block">
-              {(livestreams) ? <DefaultCard data={livestreams[1]} /> : 'Loading'}
+              {(livestreams[1]) ? <DefaultCard data={livestreams[1]} /> : 'Loading'}
               <h5>...</h5>
               <p>...</p>
             </div>
@@ -54,7 +54,7 @@ const Home = ({children}) => {
           <div className="carousel-item" style={{backgroundImage: `url(${bg.bg3})`}}>
             {/* <img className="d-block w-100" src={bg.bg3} alt="Third slide"/> */}
             <div className="carousel-caption d-none d-md-block">
-              {(livestreams) ? <DefaultCard data={livestreams[2]} /> : 'Loading'}
+              {(livestreams[2]) ? <DefaultCard data={livestreams[2]} /> : 'Loading'}
               <h5>...</h5>
               <p>...</p>
             </div>
@@ -73,4 +73,4 @@ const Home = ({children}) => {
   );
 };
 
-export default Home;
+export default HomePage;

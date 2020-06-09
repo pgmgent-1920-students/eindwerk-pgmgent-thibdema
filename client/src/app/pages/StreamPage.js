@@ -6,7 +6,7 @@ import { useAuth, useFirestore } from '../services';
 import * as Routes from '../routes';
 
 
-const Stream = () => {
+const StreamPage = () => {
   const {currentUser} = useAuth();
   const {getGenres, addLivestream} = useFirestore();
 
@@ -23,7 +23,7 @@ const Stream = () => {
   }, [getGenres]);
 
   const convertDate = (date) => {
-    const newDate = new Date(date).toISOString();
+    const newDate = Date.parse(date);
     return newDate;
   }
 
@@ -94,4 +94,4 @@ const Stream = () => {
   );
 }
 
-export default Stream;
+export default StreamPage;

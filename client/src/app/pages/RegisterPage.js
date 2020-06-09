@@ -5,9 +5,9 @@ import { useAuth } from '../services/firebase/auth.services';
 
 import * as Routes from '../routes';
 
-import './Register.scss';
+import './RegisterPage.scss';
 
-const Register = ({children}) => {
+const RegisterPage = ({children}) => {
   const [error, setError] = useState('');
   const [confirmation, setConfirmation] = useState(false);
   const [registerForm, setRegisterForm] = useState({
@@ -72,4 +72,4 @@ const Register = ({children}) => {
   );
 };
 
-export default Register;
+export default RegisterPage;
