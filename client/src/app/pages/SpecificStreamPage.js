@@ -3,6 +3,7 @@ import {useParams} from 'react-router-dom';
 import ReactHtmlParser from 'react-html-parser'
 
 import { useAuth, useFirestore } from '../services';
+import { Chat } from '../components';
 
 import './SpecificStreamPage.scss';
 
@@ -24,7 +25,7 @@ const SpecificStreamPage = () => {
     <div className="page specStream">
       <div className="container">
         <div className="row">
-          <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+          <div className="col-xl-8 col-lg-8 col-md-8 col-sm-12 col-12">
             <div className="specStream__iframe">
               {(streamData) ? 
                 ReactHtmlParser(streamData.iframe)
@@ -37,8 +38,8 @@ const SpecificStreamPage = () => {
               }
             </div>
           </div>
-          <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
-
+          <div className="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
+              <Chat docID={streamID} />
           </div>
         </div>
       </div>

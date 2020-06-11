@@ -1,0 +1,23 @@
+.message {
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    &.me {
+        color: var(--fb-blue);
+    }
+
+    &__time {
+        width: 15%;
+    }
+
+    &__content {
+        width: 70%;
+    }
+
+    img {
+        width: 10%;
+        border-radius: 100%;
+    }
+}

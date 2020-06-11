@@ -1,0 +1,39 @@
+import React, { useEffect, useState } from 'react';
+import {Link} from 'react-router-dom';
+
+import { useAuth } from '../../services';
+import Bot from '../../images/bot.png';
+
+import './Message.scss';
+
+const Message = (content) => {
+  const { currentUser } = useAuth();
+  const data = content.content;
+  const date = new Date(data.created_At);
+
+  const timeTwoDigits = (number) => {
+    let Val;
+    (number < 10) ? Val = `0${number}` : Val = number;
+    return Val;
+  }
+
+  return(
+    <div>
+      {(!!data) ?
+        <div className={(currentUser.uid == data.uid) ? 'message me' : 'message'}>
+          <span className="message__time">{timeTwoDigits(date.getHours())}:{timeTwoDigits(date.getMinutes())}</span>
+          <span className="message__content">{data.message}</span>
+          <img src={data.ownerThumbnail} alt={data.displayName} title={data.displayName}/>
+        </div>
+        : 
+        <div className="message">
+          <span className="message__time">Now</span>
+          <span className="message__content">No messages yet</span>
+          <img src={Bot} alt="Bot" title="Bot"/>
+        </div>
+      }  
+    </div>
+  );
+}
+
+export default Message;

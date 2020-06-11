@@ -28,7 +28,7 @@ const CourtesyNavigation = ({children}) => {
           </div>
         : 
           <div className="navbar-nav flexing">
-            <Link className="nav-link" to={Routes.AUTH_SIGN_IN}>Sign In</Link>
+            <Link className="nav-link" to={Routes.AUTH_SIGN_IN}>Login</Link>
             /
             <Link className="nav-link" to={Routes.REGISTER}>Register</Link>
           </div>

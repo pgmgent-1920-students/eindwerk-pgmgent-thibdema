@@ -1,6 +1,8 @@
 import React, { useContext } from 'react';
 import 'firebase/firestore';
 
+import * as firebase from 'firebase/app';
+
 import { useFirebase } from './firebase.services';
 
 const FirestoreContext = React.createContext(null);
@@ -9,42 +11,6 @@ const useFirestore = () => useContext(FirestoreContext);
 const FirestoreProvider = ({children}) => {
   const { app } = useFirebase();
   const db = app.firestore();
-
-  const getMessages = async () => {
-    const query = db.collection('messages').orderBy('createdAt', 'desc');
-    const querySnapshot = await query.get();
-    const messages = querySnapshot.docs.map((doc) => {
-      return {
-        uid: doc.id,
-        ...doc.data()
-      }
-    });
-    return messages;
-  };
-
-  const getBookmarks = async () => {
-    const query = db.collection('bookmarks').orderBy('createdAt', 'desc');
-    const querySnapshot = await query.get();
-    const bookmarks = querySnapshot.docs.map((doc) => {
-      return {
-        uid: doc.id,
-        ...doc.data()
-      }
-    });
-    return bookmarks;
-  };
-
-  const getPokemons = async () => {
-    const query = db.collection('pokemons').orderBy('name', 'asc');
-    const querySnapshot = await query.get();
-    const pokemons = querySnapshot.docs.map((doc) => {
-      return {
-        uid: doc.id,
-        ...doc.data()
-      }
-    });
-    return pokemons;
-  };
 
   const getGenres = async () => {
     const query = db.collection('genres');
@@ -55,6 +21,27 @@ const FirestoreProvider = ({children}) => {
     return genres;
   };
 
+  const getChatMessages = async (docID) => {
+    const query = db.collection('livestreams').doc(docID);
+    const querySnapshot = await query.get();
+    const chatMessages = querySnapshot.data().chat;
+    return getLastX(sortChatMessages(chatMessages), 6);
+  };
+
+  const getLastX = (arr, amount) => {
+    let max = arr.length;
+    const min = 0;
+    (max > amount) ? max=amount  : max=max;
+    return arr.slice(min, max);
+  };
+
+  const sendMessage = async (data, docID) => {
+    const query = db.collection("livestreams").doc(docID);
+    let addObjToArr = await query.update({
+      chat: firebase.firestore.FieldValue.arrayUnion(data)
+    });
+  };
+
   const addLivestream = async (livestream) => {
     const ref = db.collection('livestreams');
     const docRef = await ref.add(livestream);
@@ -63,7 +50,6 @@ const FirestoreProvider = ({children}) => {
 
   const getLivestreams = async () => {
     const currentDate = Date.now();
-    console.log(currentDate)
     const ref = db.collection('livestreams');
     const querySnapshot = await ref.get();
     const livestreams = [];
@@ -96,20 +82,29 @@ const FirestoreProvider = ({children}) => {
     return data;
   }
 
+  const sortChatMessages = (data) => {
+    // Newest first
+    data.sort((a, b) => {
+      let fa = a.created_At;
+      let fb = b.created_At;
+  
+      if(fa < fb) {
+        return 1
+      } else {
+        return -1;
+      } 
+    });
+    return data;
+  }
+
   const getSpecificStream = async (docID) => {
     const ref = db.collection('livestreams').doc(docID);
     const querySnapshot = await ref.get();
     return querySnapshot.data();
   };
 
-  const addBookmark = async (bookmark) => {
-    const ref = db.collection('bookmarks');
-    const docRef = await ref.add(bookmark);
-    return docRef;
-  };
-
   return (
-    <FirestoreContext.Provider value={{addBookmark, getBookmarks, getMessages, getPokemons, getGenres, addLivestream, getLivestreams, getSpecificStream}}>
+    <FirestoreContext.Provider value={{getGenres, addLivestream, getLivestreams, getSpecificStream, getChatMessages, sendMessage}}>
       {children}
     </FirestoreContext.Provider>
   );

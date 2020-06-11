@@ -1,0 +1,30 @@
+.chat {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    background-color: #F8F9FA;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+
+    &__title {
+        padding: 0.5rem;
+        border-bottom: 1px solid #e5e7e9;        
+    }
+
+    &__messages {
+        border: 1px solid #e5e7e9;
+        height: 100%;
+        margin: 0.5rem 0rem;
+        background-color: var(--white);
+    }
+
+    &__input {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        button {
+            margin-left: 0.5rem;
+        }
+    }
+}

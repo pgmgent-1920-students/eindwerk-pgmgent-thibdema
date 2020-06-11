@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
-
 import { Redirect } from 'react-router-dom';
+import { v4 as uuidv4 } from 'uuid';
 
 import { useAuth, useFirestore } from '../services';
 import * as Routes from '../routes';
-
+import BotIMG from '../images/bot.png'
 
 const StreamPage = () => {
   const {currentUser} = useAuth();
@@ -41,9 +41,18 @@ const StreamPage = () => {
       expirationDate: convertDate(formData.get('expirationDate')),
       owner: currentUser.displayName,
       ownerThumbnail: currentUser.photoURL,
+      chat: [
+        {
+          message: 'The chat has started',
+          created_At: Date.now(),
+          displayName:  'Corona-BOT',
+          ownerThumbnail: BotIMG,
+          userID: currentUser.uid
+        }
+      ]
     };
 
-    console.log(data)
+    console.log(data);
     const getBack = addLivestream(data);
     setInputData(data);
   };

@@ -1,18 +1,23 @@
-import React, { } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
+import * as Routes from '../../routes';
 import Logo from './Logo';
+
+import {useAuth} from '../../services';
 
 import './Footer.scss';
 
 const Footer = ({children}) => {
+  const {currentUser, signOut} = useAuth();
+
   return (
     <footer className="footer page-footer center-on-small-only stylish-color-dark bg-light">
       <div className="container footer-content">
         <div className="row">
           <div className="col-md-4">
             <h5 className="title mb-4 mt-3 font-bold logo-title">
-              <Logo type="text" />
+              <Link to="/"><Logo type="text" /></Link>
             </h5>
             <p className="footer-description">
               The music livestream app for DJ's and artists during COVID-19. Share your embedded link from youtube, twitch, mixer or another platform. Don't forget to enjoy the music. 
@@ -20,23 +25,29 @@ const Footer = ({children}) => {
           </div>
           <hr className="clearfix w-100 d-md-none"/>
           <div className="col-md-2 mx-auto">
-            <h5 className="title mb-4 mt-3 font-bold">Links</h5>
+            <h5 className="title mb-4 mt-3 font-bold">Navigation</h5>
             <ul>
-              <li><a href="#">Link 1</a></li>
-              <li><a href="#">Link 2</a></li>
-              <li><a href="#">Link 3</a></li>
-              <li><a href="#">Link 4</a></li>
+              <li><Link to={Routes.HOME}>Home</Link></li>
+              <li><Link to={Routes.CATEGORIES}>Categories</Link></li>
+              <li><Link to={Routes.BROWSE}>Browse</Link></li>
+              <li><Link to={Routes.STREAM}>Stream</Link></li>
             </ul>
           </div>
           <hr className="clearfix w-100 d-md-none"/>
           <div className="col-md-2 mx-auto">
-            <h5 className="title mb-4 mt-3 font-bold">Links</h5>
-            <ul>
-              <li><a href="#">Link 1</a></li>
-              <li><a href="#">Link 2</a></li>
-              <li><a href="#">Link 3</a></li>
-              <li><a href="#">Link 4</a></li>
-            </ul>
+            <h5 className="title mb-4 mt-3 font-bold">Account</h5>
+            {(!!currentUser) ? 
+              <ul>
+                <li><Link to={Routes.ACCOUNT}>Account</Link></li>
+                <li><Link to={Routes.SETTINGS}>Settings</Link></li>
+                <li><Link to={Routes.HOME} onClick={signOut}>Logout</Link></li>
+              </ul>
+              :
+              <ul>
+                <li><Link to={Routes.AUTH_SIGN_IN}>Login</Link></li>
+                <li><Link to={Routes.REGISTER}>Register</Link></li>
+              </ul>
+              }
           </div>
           <hr className="clearfix w-100 d-md-none"/>
           <div className="col-md-2 mx-auto">

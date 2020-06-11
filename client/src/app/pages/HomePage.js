@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-import {useAuth, useFirestore} from '../services';
+import { useFirestore} from '../services';
 
 import { DefaultCard } from '../components';
 
@@ -14,7 +14,6 @@ const HomePage = ({children}) => {
   useEffect(() => {
     const fetchLivestreams = async () => {
       const data = await getLivestreams();
-      console.log(data);
       setLivestreams(data);
     }
     fetchLivestreams();
