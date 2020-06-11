@@ -70,6 +70,8 @@ const FirestoreProvider = ({children}) => {
     const livestreams = [];
     querySnapshot.docs.map((doc) => {
       const data = doc.data();
+      console.log(data)
+      console.log(currentDate)
       if(data.expirationDate > currentDate && data.startDate < currentDate) {
         const constructor = {
           ...data,

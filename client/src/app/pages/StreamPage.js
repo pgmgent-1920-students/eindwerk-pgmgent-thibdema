@@ -61,8 +61,8 @@ const StreamPage = () => {
     <div className="page stream">
       {(!!currentUser) ? '' : <Redirect to={Routes.AUTH_SIGN_IN} /> }
       <div className="container">
-        <h1>Add stream</h1>
-        <form onSubmit={(ev) => handleSubmit(ev)}>
+        <form className="niceDesignedForm" onSubmit={(ev) => handleSubmit(ev)}>
+          <h1>Add stream</h1>
           <div className="form-group">
             <label htmlFor="inputTitle">Title</label>
             <input required type="text" minLength="5" maxLength="150" name="title" className="form-control" id="inputTitle" placeholder="Title"/>
