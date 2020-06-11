@@ -20,11 +20,18 @@
     }
 
     &__input {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+        &__content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
         button {
             margin-left: 0.5rem;
         }
+    }
+
+    .not-allowed {
+        text-align: center;
+        color: var(--yt-red) !important;
     }
 }

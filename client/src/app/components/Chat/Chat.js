@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
 
 import { useAuth, useFirestore } from '../../services';
 import { Message } from '../Chat';
+import * as Routes from '../../routes';
 
 import './Chat.scss';
 
@@ -13,7 +15,7 @@ const Chat = (docID) => {
   const { getChatMessages, sendMessage } = useFirestore();
   const { currentUser } = useAuth();
 
-  const reloadChatMessagesSeconds = 5;
+  const reloadChatMessagesSeconds = 10;
 
   useEffect(() => {
     const fetchMessages = async () => {
@@ -62,10 +64,18 @@ const Chat = (docID) => {
         {(!!messages) ? messages.map((e) => <Message content={e} key={uuidv4()} />) : <Message content={false}/>}
       </div>
       <form onSubmit={(ev) => handleSubmit(ev)} className="chat__input">
-        <input required type="text" className="form-control" id="textMessage" name="txtMessage" placeholder="Message" value={inputVal} onChange={(ev) => {handleChange(ev)}}/>
-        <button type="submit" className="btn btn-primary">
-          Send
-        </button>
+          {(!!currentUser) ?
+          <div className="chat__input__content">
+            <input required type="text" className="form-control" id="textMessage" name="txtMessage" placeholder="Message" value={inputVal} onChange={(ev) => {handleChange(ev)}}/>
+            <button type="submit" className="btn btn-primary">
+              Send
+            </button>
+          </div>
+          :
+          <div className="not-allowed">
+            <Link to={Routes.AUTH_SIGN_IN}>You're not allowed to send messages<br/>sign in here</Link>
+          </div>
+          }
       </form>
     </div>
   );
