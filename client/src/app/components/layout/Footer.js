@@ -20,7 +20,7 @@ const Footer = ({children}) => {
               <Link to="/"><Logo type="text" /></Link>
             </h5>
             <p className="footer-description">
-              The music livestream app for DJ's and artists during COVID-19. Share your embedded link from youtube, twitch, mixer or another platform. Don't forget to enjoy the music. 
+              The music livestream app for DJs and artists during COVID-19. Share your embedded link from Youtube, Twitch, Mixer or another platform. Don't forget to enjoy the music. 
             </p>
           </div>
           <hr className="clearfix w-100 d-md-none"/>
