@@ -38,7 +38,7 @@ const SignInPage = ({children}) => {
       <div className="container">
         <div className="row">
           <div className="col-12 offset-md-2 col-md-8 offset-lg-3 col-lg-6">
-            <form onSubmit={(ev) => handleSubmit(ev)}>
+            <form className="signin__form niceDesignedForm" onSubmit={(ev) => handleSubmit(ev)}>
               {(loginError) ? <div className="alert alert-danger" role="alert">{loginError}</div> : ''}
               <div className="form-group">
                 <label htmlFor="txtEmail">Email address</label>

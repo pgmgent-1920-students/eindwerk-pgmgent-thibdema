@@ -1,7 +1,9 @@
-.forgot-password {
-    cursor: pointer;
-    margin-left: 1rem;
-    &:hover {
-        color: #74b9ff;
+.signin {
+    .forgot-password {
+        cursor: pointer;
+        margin-left: 1rem;
+        &:hover {
+            color: #74b9ff;
+        }
     }
 }

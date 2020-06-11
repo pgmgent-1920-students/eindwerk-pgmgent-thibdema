@@ -43,7 +43,7 @@ const RegisterPage = ({children}) => {
       <div className="container">
         <div className="row">
           <div className="col-12 offset-md-2 col-md-8 offset-lg-3 col-lg-6">
-            <form onSubmit={(ev) => handleSubmit(ev)}>
+            <form className="niceDesignedForm" onSubmit={(ev) => handleSubmit(ev)}>
               {(confirmation && !error) ? <div className="alert alert-success" role="alert">{confirmation}</div> : '' }
               {(error && !confirmation) ? <div className="alert alert-danger" role="alert">{error}</div> : '' }
               <div className="form-group">
