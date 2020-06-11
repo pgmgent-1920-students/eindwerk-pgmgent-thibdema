@@ -7,10 +7,10 @@ import Bot from '../../images/bot.png';
 import './Message.scss';
 
 const Message = (content) => {
-  const [userID, setUserID] = useState(false);
   const { currentUser } = useAuth();
   const data = content.content;
   const date = new Date(data.created_At);
+  const [userID, setUserID] = useState();
 
   useEffect(() => {
     (!!currentUser) ? setUserID(currentUser.uid) : setUserID(false);
@@ -25,7 +25,7 @@ const Message = (content) => {
   return(
     <div>
       {(!!data) ?
-        <div className={(userID == data.uid) ? 'message me' : 'message'}>
+        <div className={(userID === data.userID) ? 'message yourself' : 'message'}>
           <span className="message__time">{timeTwoDigits(date.getHours())}:{timeTwoDigits(date.getMinutes())}</span>
           <span className="message__content">{data.message}</span>
           <img src={data.ownerThumbnail} alt={data.displayName} title={data.displayName}/>

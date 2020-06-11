@@ -1,11 +1,11 @@
 .message {
     padding: 0.5rem;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     width: 100%;
     justify-content: space-between;
-    &.me {
-        color: var(--fb-blue);
+    &.yourself {
+        color: var(--fb-blue) !important;
     }
 
     &__time {
@@ -14,10 +14,13 @@
 
     &__content {
         width: 70%;
+        word-wrap: break-word;
     }
 
     img {
         width: 10%;
+        min-width: 1rem;
+        min-height: 1rem;
         border-radius: 100%;
     }
 }

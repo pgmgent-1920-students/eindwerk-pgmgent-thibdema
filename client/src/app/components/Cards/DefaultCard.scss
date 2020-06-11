@@ -4,6 +4,7 @@
     background-color: var(--bg-dark-blue);
     color: var(--white);
     text-decoration: none;
+    word-wrap: break-word;
 
     &:hover {
         color: var(--white);

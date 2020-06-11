@@ -15,7 +15,7 @@ const Chat = (docID) => {
   const { getChatMessages, sendMessage } = useFirestore();
   const { currentUser } = useAuth();
 
-  const reloadChatMessagesSeconds = 10;
+  const reloadChatMessagesSeconds = 3;
 
   useEffect(() => {
     const fetchMessages = async () => {

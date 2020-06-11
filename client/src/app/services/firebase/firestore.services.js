@@ -25,15 +25,30 @@ const FirestoreProvider = ({children}) => {
     const query = db.collection('livestreams').doc(docID);
     const querySnapshot = await query.get();
     const chatMessages = querySnapshot.data().chat;
-    return getLastX(sortChatMessages(chatMessages), 6);
+    return getFirstX(sortChatMessages(chatMessages), 7);
   };
 
-  const getLastX = (arr, amount) => {
+  const getFirstX = (arr, amount) => {
     let max = arr.length;
-    const min = 0;
-    (max > amount) ? max=amount  : max=max;
+    const min = max-amount;
     return arr.slice(min, max);
   };
+
+  const sortChatMessages = (data) => {
+    // Newest first
+    data.sort((a, b) => {
+      let fa = a.created_At;
+      let fb = b.created_At;
+  
+      if(fa < fb) {
+        return -1
+      } else {
+        return 1;
+      } 
+    });
+    return data;
+  }
+
 
   const sendMessage = async (data, docID) => {
     const query = db.collection("livestreams").doc(docID);
@@ -72,21 +87,6 @@ const FirestoreProvider = ({children}) => {
     data.sort((a, b) => {
       let fa = a.startDate;
       let fb = b.startDate;
-  
-      if(fa < fb) {
-        return 1
-      } else {
-        return -1;
-      } 
-    });
-    return data;
-  }
-
-  const sortChatMessages = (data) => {
-    // Newest first
-    data.sort((a, b) => {
-      let fa = a.created_At;
-      let fb = b.created_At;
   
       if(fa < fb) {
         return 1
