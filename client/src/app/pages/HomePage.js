@@ -38,24 +38,18 @@ const HomePage = ({children}) => {
             {/* <img className="d-block w-100" src={bg.bg1} alt="First slide"/> */}
             <div className="carousel-caption d-none d-md-block">
               {(livestreams[0]) ? <DefaultCard data={livestreams[0]} /> : 'Loading'}
-              <h5>...</h5>
-              <p>...</p>
             </div>
           </div>
           <div className="carousel-item" style={{backgroundImage: `url(${bg.bg2})`}}>
             {/* <img className="d-block w-100" src={bg.bg2} alt="Second slide"/> */}
             <div className="carousel-caption d-none d-md-block">
               {(livestreams[1]) ? <DefaultCard data={livestreams[1]} /> : 'Loading'}
-              <h5>...</h5>
-              <p>...</p>
             </div>
           </div>
           <div className="carousel-item" style={{backgroundImage: `url(${bg.bg3})`}}>
             {/* <img className="d-block w-100" src={bg.bg3} alt="Third slide"/> */}
             <div className="carousel-caption d-none d-md-block">
               {(livestreams[2]) ? <DefaultCard data={livestreams[2]} /> : 'Loading'}
-              <h5>...</h5>
-              <p>...</p>
             </div>
           </div>
         </div>
