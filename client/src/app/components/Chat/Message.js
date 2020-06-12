@@ -28,13 +28,13 @@ const Message = (content) => {
         <div className={(userID === data.userID) ? 'message yourself' : 'message'}>
           <span className="message__time">{timeTwoDigits(date.getHours())}:{timeTwoDigits(date.getMinutes())}</span>
           <span className="message__content">{data.message}</span>
-          <img src={data.ownerThumbnail} alt={data.displayName} title={data.displayName}/>
+          <img className="thumbnail" src={data.ownerThumbnail} alt={data.displayName} title={data.displayName}/>
         </div>
         : 
         <div className="message">
           <span className="message__time">Now</span>
           <span className="message__content">No messages yet</span>
-          <img src={Bot} alt="Bot" title="Bot"/>
+          <img className="thumbnail" src={Bot} alt="Bot" title="Bot"/>
         </div>
       }  
     </div>

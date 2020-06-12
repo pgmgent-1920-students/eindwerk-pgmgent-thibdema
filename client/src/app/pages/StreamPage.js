@@ -40,6 +40,7 @@ const StreamPage = () => {
       startDate: convertDate(formData.get('startDate')),
       expirationDate: convertDate(formData.get('expirationDate')),
       owner: currentUser.displayName,
+      ownerID: currentUser.uid,
       ownerThumbnail: currentUser.photoURL,
       chat: [
         {
