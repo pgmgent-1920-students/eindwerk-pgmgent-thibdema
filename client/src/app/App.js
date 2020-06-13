@@ -5,7 +5,7 @@ import { AuthProvider, FirebaseProvider, FirestoreProvider } from './services';
 import { RouteWithLayout } from './utilities';
 
 import { BaseLayout } from './layouts';
-import { HomePage, MessagesPage, StreamPage, SignInPage, RegisterPage, SpecificStreamPage} from './pages';
+import { HomePage, MessagesPage, StreamPage, SignInPage, RegisterPage, SpecificStreamPage, CategoryPage} from './pages';
 
 import * as Routes from './routes';
 
@@ -22,6 +22,7 @@ function App() {
                 <RouteWithLayout exact path={Routes.LANDING} layout={ BaseLayout } component={ HomePage }/>
                 <Redirect from={Routes.HOME} to={Routes.LANDING}/>
                 <RouteWithLayout exact path={Routes.MESSAGES} layout={ BaseLayout } component={ MessagesPage }/>
+                <RouteWithLayout exact path={Routes.CATEGORIES} layout={ BaseLayout } component={ CategoryPage }/>
                 <RouteWithLayout exact path={Routes.STREAM} layout={ BaseLayout } component={ StreamPage }/>
                 <RouteWithLayout exact path={Routes.SPECSTREAM} layout={ BaseLayout } component={ SpecificStreamPage }/>
                 <RouteWithLayout exact path={Routes.AUTH_SIGN_IN} layout={ BaseLayout } component={ SignInPage }/>

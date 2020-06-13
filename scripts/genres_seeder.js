@@ -21,14 +21,20 @@ const apiLink = 'https://api.deezer.com/genre';
   const main = async () => {
     // console.log(allData)
     allData.data.forEach(element => {
-      genres.push(element.name)      
+      genres.push(element)      
     });
   };
 
   const createGenre = (genre) => {
     if(genre) {
       const data = {
-        genre: genre,
+        genre: genre.name,
+        id: genre.id,
+        picture: genre.picture,
+        picture_small: genre.picture_small,
+        picture_medium: genre.picture_medium,
+        picture_big: genre.picture_big,
+        picture_xl: genre.picture_xl,
       };
   
       collectionRef.add(data).then(documentReference => {

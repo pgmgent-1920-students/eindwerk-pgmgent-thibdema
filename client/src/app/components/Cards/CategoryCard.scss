@@ -1,0 +1,40 @@
+.categoryCard {
+    position: relative;
+    width: 100%;
+    height: 15rem;
+    margin-top: 2rem;
+
+    &:hover {
+        text-decoration: none;
+
+        .categoryCard {
+            &__image {
+                transition: 0.3s;
+                opacity: 1.2;
+                filter: grayscale(100%);
+            }
+        }
+    }
+    
+    &__image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        opacity: 0.8;
+    }
+
+    &__title {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        z-index: 500;
+        color: var(--white);
+    }
+}
