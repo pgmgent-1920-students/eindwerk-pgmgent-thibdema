@@ -70,18 +70,33 @@ const FirestoreProvider = ({children}) => {
     const livestreams = [];
     querySnapshot.docs.map((doc) => {
       const data = doc.data();
-      console.log(data)
-      console.log(currentDate)
       if(data.expirationDate > currentDate && data.startDate < currentDate) {
         const constructor = {
           ...data,
           id: doc.id,
         };
-
         livestreams.push(constructor);
       }
     });
     return sortLivestreams(livestreams);
+  };
+
+  const getGenre = async (id) => {
+    const query = await db.collection('genres').get();
+    let content;
+    query.forEach((doc) => {
+      const data = doc.data();
+      if(data.id == id) {
+        content = data;
+      }
+    });
+    return content;
+  };
+
+  const getLivestreamsFromGenre = async (genre) => {
+    const allLiveStreams = await getLivestreams();
+    const grLs = allLiveStreams.filter((ls) => ls.genre == genre);
+    return grLs;
   };
 
   const sortLivestreams = (data) => {
@@ -106,7 +121,7 @@ const FirestoreProvider = ({children}) => {
   };
 
   return (
-    <FirestoreContext.Provider value={{getGenres, addLivestream, getLivestreams, getSpecificStream, getChatMessages, sendMessage}}>
+    <FirestoreContext.Provider value={{getGenres, addLivestream, getLivestreams, getSpecificStream, getChatMessages, sendMessage, getGenre, getLivestreamsFromGenre}}>
       {children}
     </FirestoreContext.Provider>
   );

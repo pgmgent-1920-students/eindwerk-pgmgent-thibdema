@@ -5,6 +5,7 @@ import SignInPage from './SignInPage';
 import RegisterPage from './RegisterPage';
 import SpecificStreamPage from './SpecificStreamPage';
 import CategoryPage from './CategoryPage';
+import CategoryDetailPage from './CategoryDetailPage';
 
 export {
   HomePage,
@@ -14,4 +15,5 @@ export {
   RegisterPage,
   SpecificStreamPage,
   CategoryPage,
+  CategoryDetailPage,
 }

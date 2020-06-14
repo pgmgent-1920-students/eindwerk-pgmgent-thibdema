@@ -1,10 +1,11 @@
 import {ForgotPasswordPopup} from './authentication';
-import { DefaultCard, CategoryCard } from './Cards';
+import {DefaultCard, CategoryCard, DisplayCard} from './Cards';
 import { Chat } from './Chat';
 
 export {
   ForgotPasswordPopup,
-  DefaultCard,
   CategoryCard,
+  DefaultCard,
+  DisplayCard,
   Chat,
 }

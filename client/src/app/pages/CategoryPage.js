@@ -7,6 +7,7 @@ const CategoryPage = () => {
   const [totalGenres, setTotalGenres] = useState();
   const [genres, setGenres] = useState();
   const [inputValue, setInputValue] = useState('');
+  
   const {getGenres} = useFirestore();
 
   useEffect(() => {
@@ -21,14 +22,14 @@ const CategoryPage = () => {
   const handleChanges = (e) => {
     e.preventDefault();
     setInputValue(e.target.value);
-    console.log(e.target.value);
     const overigeGenres = totalGenres.filter((ev) => ev.genre.toLowerCase().includes(e.target.value.toLowerCase()));
     setGenres(overigeGenres);
-  }
+  };
 
   return(
     <div className="page categoryPage">
       <form className="container">
+        <label>Search genre</label>
         <input onChange={(e) => handleChanges(e)} className="form-control" id="searchGenres" name="searchGenres" type="text" placeholder="Search.." value={inputValue} />
         <div className="categories row">
           {(!!genres) ? 

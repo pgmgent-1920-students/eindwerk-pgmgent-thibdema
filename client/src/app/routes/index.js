@@ -4,6 +4,7 @@ export const BOOKMARKS = '/bookmarks';
 export const MESSAGES = '/messages';
 export const POKEMONS = '/pokemons';
 export const CATEGORIES = '/categories';
+export const CATEGORYDETAIL = '/category/detail/:id';
 export const BROWSE = '/browse';
 export const STREAM = '/stream';
 export const SETTINGS = '/settings';

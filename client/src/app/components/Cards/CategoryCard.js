@@ -6,7 +6,7 @@ import './CategoryCard.scss';
 const CategoryCard = (data) => {
   
   return(
-    <Link to={`/category/detail/${data.genre}`} className="categoryCard d-flex flex-column">
+    <Link to={`/category/detail/${data.id}`} className="categoryCard d-flex flex-column">
       <div className="categoryCard__image" style={{backgroundImage: `url(${data.picture_big})`}}>
       </div>
       <h5 className="categoryCard__title">
