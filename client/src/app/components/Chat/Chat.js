@@ -31,7 +31,7 @@ const Chat = (docID) => {
     return () => {
       clearInterval(msgInt);
     };
-  }, []);
+  }, [docID.docID, getChatMessages]);
 
   const handleSubmit = (ev) => {
     ev.preventDefault();

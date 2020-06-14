@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react';
 import {Link, useParams} from 'react-router-dom';
 
 import {useFirestore} from '../services';
-import {DisplayCard} from '../components';
+import {DisplayCard, Loading} from '../components';
+import * as Routes from '../routes';
 
 const CategoryDetailPage = () => {
   const {getGenre, getLivestreamsFromGenre} = useFirestore();
@@ -12,17 +13,20 @@ const CategoryDetailPage = () => {
   const [inputValue, setInputValue] = useState('');
   const [totalLivestreams, setTotalLivestreams] = useState();
   const [livestreams, setLivestreams] = useState();
+  const [genre, setGenre] = useState('');
 
 
   useEffect(() => {
     const fetchData = async () => {
       const genreData = await getGenre(id);
+      console.log(genreData)
       const getLivestreams = await getLivestreamsFromGenre(genreData.genre);
+      setGenre(genreData);
       setTotalLivestreams(getLivestreams);
       setLivestreams(livestreams);
     }
     fetchData();
-  }, []);
+  }, [getGenre, id, livestreams, getLivestreamsFromGenre]);
 
   const handleChanges = (e) => {
     e.preventDefault();
@@ -35,26 +39,33 @@ const CategoryDetailPage = () => {
   const showContent = () => {
     switch (inputValue) {
       case '':
-        if(!!totalLivestreams) {
+        if(!!totalLivestreams && totalLivestreams.length > 0) {
           return(totalLivestreams.map((e, index) => <div key={index} className="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12"><DisplayCard data={e} /></div>));
+        } else if (!!totalLivestreams && totalLivestreams.length === 0) {
+          return(<h3 className="d-flex justify-content-center align-items-center" style={{textAlign: 'center', width: '100%', margin: '3rem 0rem'}}>This category has no livestreams at the moment.</h3>);
         } else {
-          return(<div className="spinner-border text-primary" role="status"><span className="sr-only">Loading...</span></div>);
-        }
-        break;
-    
+          return(<Loading />);
+        }    
       default:
-        if(!!livestreams) {
+        if(!!livestreams && livestreams.length > 0) {
           return(livestreams.map((e, index) => <div key={index} className="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12"><DisplayCard data={e} /></div>));
+        } else if (!!livestreams && livestreams.length === 0) {
+          return(<h3 className="d-flex justify-content-center align-items-center" style={{textAlign: 'center', width: '100%', margin: '3rem 0rem'}}>This category has no livestreams at the moment.</h3>);
         } else {
-          return(<div className="spinner-border text-primary" role="status"><span className="sr-only">Loading...</span></div>);
+          return(<Loading />);
         }
-        break;
     }
   }
  
   return(
     <div className="page CategoryDetailPage">
       <form className="container">
+        <nav aria-label="breadcrumb">
+          <ol className="breadcrumb">
+            <li className="breadcrumb-item"><Link to={Routes.CATEGORIES}>Categories</Link></li>
+            <li className="breadcrumb-item active" aria-current="page"><Link to={`/category/detail/${genre.id}`}>{genre.genre}</Link></li>
+          </ol>
+        </nav>
         <label>Search livestream</label>
         <input onChange={(e) => handleChanges(e)} className="form-control" id="searchStream" name="searchStream" type="text" placeholder="Search.." value={inputValue} />
         <div className="row">

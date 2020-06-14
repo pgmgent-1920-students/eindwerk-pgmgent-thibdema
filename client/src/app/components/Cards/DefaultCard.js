@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, {} from 'react';
 import {Link} from 'react-router-dom';
 
 import './DefaultCard.scss';
@@ -13,7 +13,7 @@ const DefaultCard = ({data}) => {
       </div>
       <div className="stream">
         <div className="owner">
-          <img src={data.ownerThumbnail} className="owner__thumbnail"/>
+          <img src={data.ownerThumbnail} className="owner__thumbnail" alt={'thumbnail '+data.owner} />
           <span className="owner__displayName">{data.owner}</span>
         </div>
         <h4 className="stream__title">{data.title}</h4>

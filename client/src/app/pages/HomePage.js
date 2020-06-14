@@ -17,7 +17,7 @@ const HomePage = ({children}) => {
       setLivestreams(data);
     }
     fetchLivestreams();
-  }, []);
+  }, [getLivestreams]);
 
   const bg = {
     bg1: 'https://images.unsplash.com/photo-1500305614571-ae5b6592e65d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1055&q=80',

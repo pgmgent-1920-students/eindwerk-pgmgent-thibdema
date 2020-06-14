@@ -46,7 +46,6 @@ const AuthProvider = ({children}) => {
     try {
       return await auth.signInWithEmailAndPassword(email, password);
     } catch (error) {
-      console.log(error);
       // Error handling login with email
       switch (error.code) {
         case "auth/user-not-found":

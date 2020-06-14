@@ -1,6 +1,6 @@
 import HomePage from './HomePage';
 import MessagesPage from './MessagesPage';
-import StreamPage from './StreamPage';
+import AddStreamPage from './AddStreamPage';
 import SignInPage from './SignInPage';
 import RegisterPage from './RegisterPage';
 import SpecificStreamPage from './SpecificStreamPage';
@@ -10,7 +10,7 @@ import CategoryDetailPage from './CategoryDetailPage';
 export {
   HomePage,
   MessagesPage,
-  StreamPage,
+  AddStreamPage,
   SignInPage,
   RegisterPage,
   SpecificStreamPage,

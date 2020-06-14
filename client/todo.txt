@@ -1,2 +1,6 @@
 Adding verified when stream is added 
-Show streams on homepage
+improving Homepage
+making browse
+making account
+making settings
+changing livestream settings of active livestream

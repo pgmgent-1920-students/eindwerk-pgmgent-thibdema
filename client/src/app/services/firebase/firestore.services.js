@@ -52,7 +52,7 @@ const FirestoreProvider = ({children}) => {
 
   const sendMessage = async (data, docID) => {
     const query = db.collection("livestreams").doc(docID);
-    let addObjToArr = await query.update({
+    await query.update({
       chat: firebase.firestore.FieldValue.arrayUnion(data)
     });
   };
@@ -77,6 +77,7 @@ const FirestoreProvider = ({children}) => {
         };
         livestreams.push(constructor);
       }
+      return ''
     });
     return sortLivestreams(livestreams);
   };
@@ -86,7 +87,7 @@ const FirestoreProvider = ({children}) => {
     let content;
     query.forEach((doc) => {
       const data = doc.data();
-      if(data.id == id) {
+      if(data.id === Number(id)) {
         content = data;
       }
     });
@@ -95,7 +96,7 @@ const FirestoreProvider = ({children}) => {
 
   const getLivestreamsFromGenre = async (genre) => {
     const allLiveStreams = await getLivestreams();
-    const grLs = allLiveStreams.filter((ls) => ls.genre == genre);
+    const grLs = allLiveStreams.filter((ls) => ls.genre === genre);
     return grLs;
   };
 

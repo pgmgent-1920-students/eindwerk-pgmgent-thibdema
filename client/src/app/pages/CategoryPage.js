@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
+import {Link} from 'react-router-dom';
 
-import {CategoryCard} from '../components';
+import {CategoryCard, Loading} from '../components';
 import {useFirestore} from '../services';
+import * as Routes from '../routes';
 
 const CategoryPage = () => {
   const [totalGenres, setTotalGenres] = useState();
@@ -17,7 +19,7 @@ const CategoryPage = () => {
       setTotalGenres(data);
     }
     fetchGenres();
-  }, []);
+  }, [getGenres]);
 
   const handleChanges = (e) => {
     e.preventDefault();
@@ -29,15 +31,18 @@ const CategoryPage = () => {
   return(
     <div className="page categoryPage">
       <form className="container">
+        <nav aria-label="breadcrumb">
+          <ol className="breadcrumb">
+            <li className="breadcrumb-item active" aria-current="page"><Link to={Routes.CATEGORIES}>Categories</Link></li>
+          </ol>
+        </nav>
         <label>Search genre</label>
         <input onChange={(e) => handleChanges(e)} className="form-control" id="searchGenres" name="searchGenres" type="text" placeholder="Search.." value={inputValue} />
         <div className="categories row">
           {(!!genres) ? 
             genres.map((e, index) => <div key={index} className="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">{CategoryCard(e)}</div>) 
             : 
-            <div className="spinner-border text-primary" role="status">
-              <span className="sr-only">Loading...</span>
-            </div>
+            <Loading />
           }
         </div>
       </form>

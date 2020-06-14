@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { Link, useParams} from 'react-router-dom';
 import ReactHtmlParser from 'react-html-parser'
 
-import { useAuth, useFirestore } from '../services';
-import { Chat } from '../components';
+import { useFirestore } from '../services';
+import { Chat, Loading } from '../components';
 
 import './SpecificStreamPage.scss';
 
@@ -19,7 +19,7 @@ const SpecificStreamPage = () => {
     };
 
     fetchData();
-  }, []);
+  }, [getSpecificStream, streamID]);
 
   const displayTime = (time) => {
     const date = new Date(time);
@@ -32,7 +32,6 @@ const SpecificStreamPage = () => {
     return newNumber;
   };
 
-  console.log(streamData)
   return(
     <div className="page specStream">
       <div className="container">
@@ -42,11 +41,7 @@ const SpecificStreamPage = () => {
               {(streamData) ? 
                 ReactHtmlParser(streamData.iframe)
                 : 
-                <div className="text-center">
-                  <div className="spinner-border" role="status">
-                    <span className="sr-only">Loading...</span>
-                  </div>
-                </div>
+                <Loading />
               }
             </div>
           </div>
