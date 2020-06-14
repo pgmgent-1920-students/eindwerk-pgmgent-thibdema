@@ -51,12 +51,12 @@ const Footer = ({children}) => {
           </div>
           <hr className="clearfix w-100 d-md-none"/>
           <div className="col-md-2 mx-auto">
-            <h5 className="title mb-4 mt-3 font-bold ">Links</h5>
+            <h5 className="title mb-4 mt-3 font-bold ">Our product</h5>
             <ul>
-              <li><Link to="/">Item</Link></li>
-              <li><Link to="/">Item</Link></li>
-              <li><Link to="/">Item</Link></li>
-              <li><Link to="/">Item</Link></li>
+              <li><Link to={Routes.SUPPORT}>Support</Link></li>
+              <li><Link to={Routes.PRIVACYPOLICY}>Privacy Policy</Link></li>
+              <li><Link to={Routes.FAQ}>FAQ</Link></li>
+              <li><Link to={Routes.CONTACT}>Contact</Link></li>
             </ul>
           </div>
         </div>
