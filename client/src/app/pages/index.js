@@ -6,6 +6,7 @@ import RegisterPage from './RegisterPage';
 import SpecificStreamPage from './SpecificStreamPage';
 import CategoryPage from './CategoryPage';
 import CategoryDetailPage from './CategoryDetailPage';
+import BrowsePage from './BrowsePage';
 
 export {
   HomePage,
@@ -16,4 +17,5 @@ export {
   SpecificStreamPage,
   CategoryPage,
   CategoryDetailPage,
+  BrowsePage,
 }

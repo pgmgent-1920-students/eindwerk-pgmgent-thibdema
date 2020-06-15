@@ -4,3 +4,4 @@ making browse
 making account
 making settings
 changing livestream settings of active livestream
+redirecting when width is smaller than 720 pixels+

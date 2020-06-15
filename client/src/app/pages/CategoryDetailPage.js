@@ -19,7 +19,6 @@ const CategoryDetailPage = () => {
   useEffect(() => {
     const fetchData = async () => {
       const genreData = await getGenre(id);
-      console.log(genreData)
       const getLivestreams = await getLivestreamsFromGenre(genreData.genre);
       setGenre(genreData);
       setTotalLivestreams(getLivestreams);
