@@ -18,3 +18,15 @@
         text-transform: capitalize;
     }
 }
+
+@media only screen and (max-width: 768px) {
+    .courtesy-navigation {
+        .mobile-pad {
+            padding: 0;
+        }
+
+        .cts-btn {
+            padding: 0.5rem 0rem;
+        }
+    }
+}

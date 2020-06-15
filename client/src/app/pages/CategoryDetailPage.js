@@ -5,6 +5,8 @@ import {useFirestore} from '../services';
 import {DisplayCard, Loading} from '../components';
 import * as Routes from '../routes';
 
+import './CategoryDetailPage.scss';
+
 const CategoryDetailPage = () => {
   const {getGenre, getLivestreamsFromGenre} = useFirestore();
   const params = useParams();
@@ -60,7 +62,7 @@ const CategoryDetailPage = () => {
     <div className="page CategoryDetailPage">
       <form className="container">
         <nav aria-label="breadcrumb">
-          <ol className="breadcrumb">
+          <ol className="breadcrumb breadcrumb-design">
             <li className="breadcrumb-item"><Link to={Routes.CATEGORIES}>Categories</Link></li>
             <li className="breadcrumb-item active" aria-current="page"><Link to={`/category/detail/${genre.id}`}>{genre.genre}</Link></li>
           </ol>

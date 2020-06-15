@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/eindwerk-pgmgent-thibdema/static/css/main.0ee9f79a.chunk.css",
-    "main.js": "/eindwerk-pgmgent-thibdema/static/js/main.b1078386.chunk.js",
-    "main.js.map": "/eindwerk-pgmgent-thibdema/static/js/main.b1078386.chunk.js.map",
+    "main.css": "/eindwerk-pgmgent-thibdema/static/css/main.7ba07558.chunk.css",
+    "main.js": "/eindwerk-pgmgent-thibdema/static/js/main.1b2691d6.chunk.js",
+    "main.js.map": "/eindwerk-pgmgent-thibdema/static/js/main.1b2691d6.chunk.js.map",
     "runtime-main.js": "/eindwerk-pgmgent-thibdema/static/js/runtime-main.655cf7df.js",
     "runtime-main.js.map": "/eindwerk-pgmgent-thibdema/static/js/runtime-main.655cf7df.js.map",
-    "static/js/2.27c162bd.chunk.js": "/eindwerk-pgmgent-thibdema/static/js/2.27c162bd.chunk.js",
-    "static/js/2.27c162bd.chunk.js.map": "/eindwerk-pgmgent-thibdema/static/js/2.27c162bd.chunk.js.map",
+    "static/js/2.c65038f9.chunk.js": "/eindwerk-pgmgent-thibdema/static/js/2.c65038f9.chunk.js",
+    "static/js/2.c65038f9.chunk.js.map": "/eindwerk-pgmgent-thibdema/static/js/2.c65038f9.chunk.js.map",
     "index.html": "/eindwerk-pgmgent-thibdema/index.html",
-    "precache-manifest.ff1fe99aec2784d02fbda141332cb67a.js": "/eindwerk-pgmgent-thibdema/precache-manifest.ff1fe99aec2784d02fbda141332cb67a.js",
+    "precache-manifest.116b2ad03dcdaffb80745a4b63b3f221.js": "/eindwerk-pgmgent-thibdema/precache-manifest.116b2ad03dcdaffb80745a4b63b3f221.js",
     "service-worker.js": "/eindwerk-pgmgent-thibdema/service-worker.js",
-    "static/css/main.0ee9f79a.chunk.css.map": "/eindwerk-pgmgent-thibdema/static/css/main.0ee9f79a.chunk.css.map",
-    "static/js/2.27c162bd.chunk.js.LICENSE.txt": "/eindwerk-pgmgent-thibdema/static/js/2.27c162bd.chunk.js.LICENSE.txt",
+    "static/css/main.7ba07558.chunk.css.map": "/eindwerk-pgmgent-thibdema/static/css/main.7ba07558.chunk.css.map",
+    "static/js/2.c65038f9.chunk.js.LICENSE.txt": "/eindwerk-pgmgent-thibdema/static/js/2.c65038f9.chunk.js.LICENSE.txt",
     "static/media/logo+text.png": "/eindwerk-pgmgent-thibdema/static/media/logo+text.eb0f43d6.png",
     "static/media/logo.png": "/eindwerk-pgmgent-thibdema/static/media/logo.d90edcea.png"
   },
   "entrypoints": [
     "static/js/runtime-main.655cf7df.js",
-    "static/js/2.27c162bd.chunk.js",
-    "static/css/main.0ee9f79a.chunk.css",
-    "static/js/main.b1078386.chunk.js"
+    "static/js/2.c65038f9.chunk.js",
+    "static/css/main.7ba07558.chunk.css",
+    "static/js/main.1b2691d6.chunk.js"
   ]
 }

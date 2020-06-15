@@ -32,7 +32,7 @@ const CategoryPage = () => {
     <div className="page categoryPage">
       <form className="container">
         <nav aria-label="breadcrumb">
-          <ol className="breadcrumb">
+          <ol className="breadcrumb breadcrumb-design">
             <li className="breadcrumb-item active" aria-current="page"><Link to={Routes.CATEGORIES}>Categories</Link></li>
           </ol>
         </nav>

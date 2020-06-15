@@ -12,10 +12,10 @@ const CourtesyNavigation = ({children}) => {
 
   return (
     <ul className="navbar-nav courtesy-navigation">
-      <li className="nav-item">
+      <li className="nav-item mobile-pad">
         {!!currentUser
         ? <div className="btn-group">
-            <button type="button" className="btn dropdown-toggle flexing" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <button type="button" className="btn dropdown-toggle flexing cts-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <img className="profile__picture" src={currentUser.photoURL} alt={currentUser.displayName} />
               <span className="displayName">{currentUser.displayName}</span>
             </button>
