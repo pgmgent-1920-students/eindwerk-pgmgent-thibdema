@@ -13,11 +13,30 @@
         border-radius: 0.25rem 0.25rem 0rem 0rem;
     }
 
-    &__title {
+    &__info {
         color: var(--white);
         background-color: var(--dark-blue);
         text-align: left;
         padding: 1rem;
         border-radius: 0rem 0rem 0.25rem 0.25rem;
+        font-size: 14px;
+
+        &__thumbnail {
+            width: 20%;
+            border-radius: 100%;
+        }
+
+        &__text {
+            width: 70%;
+            margin-left: 1rem;
+
+            &__title {
+                text-overflow: ellipsis; 
+                white-space: nowrap; 
+                overflow: hidden;
+                font-weight: bold;
+                text-transform: capitalize;
+            }
+        }
     }
 }
