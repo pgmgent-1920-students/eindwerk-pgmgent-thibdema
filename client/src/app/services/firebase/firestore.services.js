@@ -121,8 +121,18 @@ const FirestoreProvider = ({children}) => {
     return querySnapshot.data();
   };
 
+  const deleteLivestream = (docID) => {
+    try {
+      db.collection("livestreams").doc(docID).delete();
+      console.log('Deleted succesfull');
+    } catch(error) {
+      // console.log(error);
+    }
+    
+  }
+
   return (
-    <FirestoreContext.Provider value={{getGenres, addLivestream, getLivestreams, getSpecificStream, getChatMessages, sendMessage, getGenre, getLivestreamsFromGenre}}>
+    <FirestoreContext.Provider value={{getGenres, addLivestream, getLivestreams, getSpecificStream, getChatMessages, sendMessage, getGenre, getLivestreamsFromGenre, deleteLivestream}}>
       {children}
     </FirestoreContext.Provider>
   );

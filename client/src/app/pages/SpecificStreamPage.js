@@ -1,16 +1,19 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useParams} from 'react-router-dom';
+import { Link, useParams, Redirect} from 'react-router-dom';
 import ReactHtmlParser from 'react-html-parser'
 
-import { useFirestore } from '../services';
+import { useFirestore, useAuth } from '../services';
 import { Chat, Loading } from '../components';
+import * as Routes from '../routes';
 
 import './SpecificStreamPage.scss';
 
 const SpecificStreamPage = () => {
   const [streamData, setStreamData] = useState(false);
+  const [redirecter, setRedirecter] = useState();
   let { streamID } = useParams();
-  const {getSpecificStream} = useFirestore();
+  const {getSpecificStream, deleteLivestream} = useFirestore();
+  const {currentUser} = useAuth();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -32,8 +35,14 @@ const SpecificStreamPage = () => {
     return newNumber;
   };
 
+  const deleteStream = async (e) => {
+    await deleteLivestream(streamID);
+    await setRedirecter(<Redirect to={Routes.HOME} />);
+  };
+
   return(
     <div className="page specStream">
+      {(!!redirecter) ? redirecter : ''}
       <div className="container">
         <div className="row">
           <div className="col-xl-8 col-lg-8 col-md-8 col-sm-12 col-12">
@@ -51,6 +60,36 @@ const SpecificStreamPage = () => {
         </div>
         <div className="specStream__usercontent">
           <div className="row specStream__info">
+            {(!!streamData && !!currentUser && streamData.ownerID === currentUser.uid) ?
+              <div className="dropdown more">
+                <i className="fas fa-ellipsis-v" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
+                <div className="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                  <Link className="dropdown-item" to="#">Edit</Link>
+                  <Link data-toggle="modal" data-target="#deleteModal" className="dropdown-item" to="#" style={{color: 'var(--yt-red)'}}>Delete</Link>
+                </div>
+              </div>
+            : 
+              ''
+            }
+
+            {/* <!-- Modal --> */}
+            <div className="modal fade" id="deleteModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+              <div className="modal-dialog modal-dialog-centered" role="document">
+                <div className="modal-content">
+                  <div className="modal-header">
+                    <h5 className="modal-title" id="exampleModalLongTitle">Are you sure you want to delete this stream ?</h5>
+                    <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div className="modal-footer d-flex justify-content-center align-items-center">
+                    <button type="button" className="btn btn-secondary" data-dismiss="modal">No thanks</button>
+                    <button onClick={(e) => deleteStream(e)} type="button" className="btn btn-danger" data-dismiss="modal">Save changes</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             <div className="col-xl-8 col-lg-8 col-md-8 col-sm-12 col-12">
               <h2 style={{textAlign: 'left', margin: '0rem 0rem 0rem 0.1rem'}}>{streamData.title}</h2>
               <p style={{margin: '0.75rem 0.25rem', wordWrap: 'break-word'}}>

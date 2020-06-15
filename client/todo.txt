@@ -1,8 +1,8 @@
 Adding verified when stream is added 
 improving Homepage
-designing browseCard
 making account
 making settings
 changing livestream settings of active livestream
 redirecting when width is smaller than 720 pixels+
 breadcrumb category pages design/colors editen
+change and delete livestream when you're the owner in specific stream page
