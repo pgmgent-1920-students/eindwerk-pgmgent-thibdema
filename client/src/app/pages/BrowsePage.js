@@ -34,8 +34,8 @@ const BrowsePage = () => {
     <div className="page browsePage">
       <div className="container">
         <form className="browsePage__header d-flex justify-content-between align-items-center">
-          <h4>Popular streams</h4>
-          <input onChange={(e) => handleChanges(e)} className="form-control col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12" type="text" name="Search" id="Search" placeholder="Search stream" value={inputValue} />
+          <h4 className="browsePage__header__title">Popular streams</h4>
+          <input onChange={(e) => handleChanges(e)} className="browsePage__header__input form-control col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12" type="text" name="Search" id="Search" placeholder="Search stream" value={inputValue} />
         </form>
         <div className="row browsePage__content">
           {

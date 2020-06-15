@@ -6,5 +6,29 @@
 .browsePage {
     &__header {
         margin: 0rem -1.5rem;
+        &__title {
+
+        }
+
+        &__input {
+
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .browsePage {
+        &__header {
+            margin: 0rem -1.5rem;
+            flex-wrap: wrap;
+            &__title {
+                width: 100% !important;
+                margin-bottom: 0.5rem;
+            }
+    
+            &__input {
+                width: 100% !important;
+            }
+        }
     }
 }

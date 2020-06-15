@@ -6,7 +6,7 @@ const BaseLayout = ({children}) => (
   <Fragment>
     <Header />
     <main className="app-main" style={{backgroundColor: 'var(--bg-light-green)'}}>
-      {children}      
+      {children}
     </main>
     <Footer />
   </Fragment>
