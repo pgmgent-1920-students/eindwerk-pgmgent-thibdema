@@ -17,6 +17,7 @@ export const SUPPORT = '/support';
 export const FAQ = '/faq';
 export const PRIVACYPOLICY = '/privacy-policy';
 export const CONTACT = '/contact';
+export const ERROR404 = '*';
 
 export const ROUTERPREFIX = process.env.REACT_APP_ROUTER_PREFIX;
 export const HREF_ORIGIN = window.location.origin;

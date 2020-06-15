@@ -7,6 +7,7 @@ import SpecificStreamPage from './SpecificStreamPage';
 import CategoryPage from './CategoryPage';
 import CategoryDetailPage from './CategoryDetailPage';
 import BrowsePage from './BrowsePage';
+import Error404Page from './Error404Page';
 
 export {
   HomePage,
@@ -18,4 +19,5 @@ export {
   CategoryPage,
   CategoryDetailPage,
   BrowsePage,
+  Error404Page,
 }

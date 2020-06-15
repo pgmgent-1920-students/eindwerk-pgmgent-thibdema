@@ -126,13 +126,29 @@ const FirestoreProvider = ({children}) => {
       db.collection("livestreams").doc(docID).delete();
       console.log('Deleted succesfull');
     } catch(error) {
-      // console.log(error);
+      console.log(error);
     }
-    
-  }
+  };
+
+  const editLivestream = (docID, data) => {
+    console.log(data)
+    console.log(docID)
+    try {
+      db.collection("livestreams").doc(docID).update({
+        title: data.txtTitle,
+        iframe: data.txtEmbLink,
+        thumbnail: data.txtImgLink,
+        genre: data.txtGenre,
+        description: data.txtDescription,
+        expirationDate: data.txtEnd,
+      });
+    } catch(error) {
+      console.log(error);
+    }
+  };
 
   return (
-    <FirestoreContext.Provider value={{getGenres, addLivestream, getLivestreams, getSpecificStream, getChatMessages, sendMessage, getGenre, getLivestreamsFromGenre, deleteLivestream}}>
+    <FirestoreContext.Provider value={{getGenres, addLivestream, getLivestreams, getSpecificStream, getChatMessages, sendMessage, getGenre, getLivestreamsFromGenre, deleteLivestream, editLivestream}}>
       {children}
     </FirestoreContext.Provider>
   );

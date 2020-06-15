@@ -84,7 +84,6 @@ const AddStreamPage = () => {
             <div className="form-group col-md-4">
               <label htmlFor="inputGenre">Genre</label>
               <select id="inputGenre" name="genre" className="form-control">
-                <option required defaultValue>Not specified</option>
                 {(!!genres) ? genres.map((e, index) => <option key={index}>{e.genre}</option>) : '' }
               </select>
             </div>
