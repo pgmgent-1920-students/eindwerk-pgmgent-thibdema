@@ -1,5 +1,7 @@
 .settings {
     margin-top: 5rem;
+    padding-bottom: 3rem;
+
     &__nav {
         background-color: var(--grey-blue);
         display: flex;
@@ -26,5 +28,6 @@
         width: 100%;
         border-radius: 0.5rem;
         color: var(--white);
+        padding-bottom: 1rem;
     }
 }

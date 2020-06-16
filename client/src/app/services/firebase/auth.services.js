@@ -106,10 +106,54 @@ const AuthProvider = ({children}) => {
     } catch (err) {
       return err.message;
     }
-  }
+  };
+
+  const updateUserPassword = async (newPassword) => {
+    try {
+      const user = await auth.currentUser;
+      const query = await user.updatePassword(newPassword);
+      return query;
+    } catch (err) {
+      return err.message;
+    }
+  };
+
+  const updateUserThumbnail = (thumbnail) => {
+    try {
+      const user = auth.currentUser;
+      const query = user.updateProfile({
+        photoURL: thumbnail
+      });
+      return query;
+    } catch (err) {
+      return err.message;
+    }
+  };
+
+  const updateUserUsername = (displayName) => {
+    try {
+      const user = auth.currentUser;
+      const query = user.updateProfile({
+        displayName: displayName
+      });
+      return query;
+    } catch (err) {
+      return err.message;
+    }
+  };
+
+  const deleteUserAccount = async () => {
+    try {
+      const user = auth.currentUser;
+      const query = await user.delete();
+      return query;
+    } catch (err) {
+      return err.message;
+    }
+  };
 
   return (
-    <AuthContext.Provider value={{currentUser,signInWithEmailAndPassword,signOut,registerWithEmailAndPassword,resetPassword,updateUserEmail}}>
+    <AuthContext.Provider value={{currentUser,signInWithEmailAndPassword,signOut,registerWithEmailAndPassword,resetPassword,updateUserEmail,updateUserPassword, updateUserThumbnail,updateUserUsername,deleteUserAccount}}>
       {children}
     </AuthContext.Provider>
   );

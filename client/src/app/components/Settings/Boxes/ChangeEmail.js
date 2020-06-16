@@ -35,11 +35,11 @@ const ChangeEmail = () => {
           {(!!error) ? <p style={{color:'var(--yt-red)', textAlign:'center'}}>{error}</p> : '' }
           <div className="form-group">
             <label htmlFor="currentEmail">Current email:</label>
-            <input required type="email" name="currentEmail" className="form-control" placeholder={(!!currentUser) ? currentUser.email : ''}></input>
+            <input required type="email" name="currentEmail" className="form-control" placeholder={(!!currentUser) ? currentUser.email : ''} />
           </div>
           <div className="form-group">
             <label htmlFor="newEmail">New email:</label>
-            <input required type="email" name="newEmail" className="form-control" placeholder="New email address"></input>
+            <input required type="email" name="newEmail" className="form-control" placeholder="New email address" />
           </div>
           <button type="submit" className="btn btn-primary align-self-center">
             Save changes

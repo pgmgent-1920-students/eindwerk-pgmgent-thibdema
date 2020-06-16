@@ -1,12 +1,16 @@
 import React, { useState } from 'react';
+import { Redirect } from 'react-router-dom';
 
 import {Account, Personalize} from '../components';
+import {useAuth} from '../services';
+import * as Routes from '../routes';
 
 import './SettingsPage.scss';
 
 const SettingsPage = () => {
   const [activePage, setActivePage] = useState('account');
-  
+  const {currentUser} = useAuth();
+
   const changePage = (e) => {
     setActivePage(e.target.innerHTML);
   };
@@ -24,6 +28,7 @@ const SettingsPage = () => {
 
   return(
     <div className="settings">
+      {(!currentUser) ? <Redirect to={Routes.LANDING} /> : ''}
       <div className="settings__nav">
         <div className="container d-flex">
           <p onClick={(e) => changePage(e)} className={(activePage === 'account') ? "settings__nav__item active" : "settings__nav__item" }>account</p>
