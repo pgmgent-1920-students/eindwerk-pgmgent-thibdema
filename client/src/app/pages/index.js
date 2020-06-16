@@ -8,6 +8,9 @@ import CategoryPage from './CategoryPage';
 import CategoryDetailPage from './CategoryDetailPage';
 import BrowsePage from './BrowsePage';
 import Error404Page from './Error404Page';
+import PrivacyPolicyPage from './PrivacyPolicyPage';
+import FAQPage from './FAQPage';
+import SettingsPage from './SettingsPage';
 
 export {
   HomePage,
@@ -20,4 +23,7 @@ export {
   CategoryDetailPage,
   BrowsePage,
   Error404Page,
+  PrivacyPolicyPage,
+  FAQPage,
+  SettingsPage,
 }

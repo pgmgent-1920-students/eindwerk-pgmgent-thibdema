@@ -24,3 +24,12 @@
         transform:translate(0, -50%);
     }
 }
+
+.round-img {
+    width: 22rem !important;
+    height: 22rem !important; 
+    border-radius: 100% !important;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}

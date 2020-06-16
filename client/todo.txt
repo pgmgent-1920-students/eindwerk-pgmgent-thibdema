@@ -1,6 +1,9 @@
 Adding verified when stream is added 
-improving Homepage
 making accountpage
 making settings
-redirecting when width is smaller than 720 pixels+
-breadcrumb category pages design/colors editen
+
+
+settings categorieen
+
+personalize
+accountsettings with delete account and option to edit account data and change thumbnail

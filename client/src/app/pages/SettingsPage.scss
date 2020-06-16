@@ -1,0 +1,24 @@
+.settings {
+    margin-top: 5rem;
+    &__nav {
+        background-color: var(--grey-blue);
+        padding: 1.5rem;
+        display: flex;
+        align-items: center;
+        border-bottom: 4px solid rgba(255, 255, 255, 0.5);
+        margin-bottom: 2rem;
+
+        &__item {
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            text-transform: capitalize;
+            padding: 24.5px 3rem;
+
+            &.active {
+                color: var(--white);
+                border-bottom: 4px solid var(--white);
+            }
+        }
+    }
+}

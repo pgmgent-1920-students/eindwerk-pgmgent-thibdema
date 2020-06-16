@@ -1,0 +1,183 @@
+.faq {
+
+    span:hover {
+        cursor: pointer;
+    }
+
+    a:hover {
+        text-decoration: none;
+    }
+
+    h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+        margin-bottom: 0.5rem;
+        font-weight: 500;
+        line-height: 1.2;
+        color: #323f52;
+    }
+
+    .text-gray-500 {
+        color: #a2acba !important;
+    }
+
+    .text-success {
+        color: #00ac69 !important;
+    }
+    .badge-success-soft {
+        color: #1f2d41;
+        background-color: #bfe5dc;
+    }
+    .badge-pill {
+        padding-right: 0.6em;
+        padding-left: 0.6em;
+        border-radius: 10rem;
+    }
+    .badge {
+        display: inline-block;
+        padding: 0.25em 0.4em;
+        font-size: 75%;
+        font-weight: 400;
+        line-height: 1;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: baseline;
+        border-radius: 0.35rem;
+        -webkit-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+        transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    }
+
+    .icon-stack-lg {
+        height: 4rem !important;
+        width: 4rem !important;
+        font-size: 1.5rem !important;
+    }
+
+    .icon-stack-lg svg {
+        height: 1.5rem;
+        width: 1.5rem;
+    }
+
+    .bg-primary-soft {
+        background-color: #bfd6f8 !important;
+    }
+
+    .text-yellow {
+        color: #f4a100 !important;
+    }
+
+    .faq .lift {
+        box-shadow: 0 0.15rem 1.75rem 0 rgba(31, 45, 65, 0.15);
+        transition: transform 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    }
+
+    .bg-yellow-soft {
+        background-color: #f0e3c7 !important;
+    }
+    
+    .icon-stack {
+        display: -webkit-inline-box;
+        display: inline-flex;
+        -webkit-box-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        align-items: center;
+        border-radius: 100%;
+        height: 2rem;
+        width: 2rem;
+        font-size: 1rem;
+        background-color: #eff3f9;
+    }
+
+    .badge-light {
+        color: #1f2d41;
+        background-color: #eff3f9;
+    }
+
+    .accordion-faq .accordion-faq-title {
+        display: -webkit-box;
+        display: flex;
+        -webkit-box-align: center;
+        align-items: center;
+        -webkit-box-pack: justify;
+        justify-content: space-between;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+
+    .card-footer:last-child {
+        border-radius: 0 0 0.35rem 0.35rem;
+    }
+
+    .bg-transparent {
+        background-color: transparent !important;
+    }
+    .card.lift {
+        text-decoration: none;
+        color: inherit;
+    }
+    
+    .card-link {
+        text-decoration: none !important;
+        color: inherit !important;
+    }
+    .card {
+        overflow: hidden;
+        position: relative;
+    }
+    .lift:hover {
+        box-shadow: 0 0.15rem 1.75rem 0 rgba(31, 45, 65, 0.15);
+        -webkit-transition: box-shadow 0.15s ease-in-out, -webkit-transform 0.15s ease-in-out;
+        transition: box-shadow 0.15s ease-in-out, -webkit-transform 0.15s ease-in-out;
+        transition: transform 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+        transition: transform 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-transform 0.15s ease-in-out;
+    }
+    .border-top-lg {
+        border-top-width: 0.25rem !important;
+    }
+    .h-100 {
+        height: 100% !important;
+    }
+
+    .border-top {
+        border-top: 1px solid #e3e6ec !important;
+    }
+
+    .card-body {
+        -webkit-box-flex: 1;
+        flex: 1 1 auto;
+        min-height: 1px;
+        padding: 1.35rem;
+    }
+
+    .text-green {
+        color: #00ac69 !important;
+    }
+
+    .bg-green-soft {
+        background-color: #bfe5dc !important;
+    }
+    
+    .card-footer {
+        padding: 1rem 1.35rem;
+        background-color: rgba(0, 0, 0, 0.03);
+        border-top: 0 solid rgba(0, 0, 0, 0.125);
+    }
+
+    .accordion-faq .accordion-faq-item .card-header .accordion-faq-item-heading {
+        width: 100%;
+        margin-bottom: 0;
+        display: -webkit-box;
+        display: flex;
+        -webkit-box-align: center;
+        align-items: center;
+        -webkit-box-pack: justify;
+        justify-content: space-between;
+        color: #485260;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+
+    }
+
+    .accordion-faq .accordion-faq-item .card-header:hover .accordion-faq-item-heading {
+        text-decoration: none !important;
+    }
+}
