@@ -2,11 +2,8 @@
     margin-top: 5rem;
     &__nav {
         background-color: var(--grey-blue);
-        padding: 1.5rem;
         display: flex;
         align-items: center;
-        border-bottom: 4px solid rgba(255, 255, 255, 0.5);
-        margin-bottom: 2rem;
 
         &__item {
             font-weight: 500;
@@ -14,11 +11,20 @@
             cursor: pointer;
             text-transform: capitalize;
             padding: 24.5px 3rem;
+            width: min-content;
+            margin: 0;
 
             &.active {
                 color: var(--white);
                 border-bottom: 4px solid var(--white);
             }
         }
+    }
+
+    &__content {
+        background-color: var(--grey-blue);
+        width: 100%;
+        border-radius: 0.5rem;
+        color: var(--white);
     }
 }

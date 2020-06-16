@@ -96,10 +96,20 @@ const AuthProvider = ({children}) => {
     })
       .then(() => console.log('update succesfull'))
       .catch((error) => console.log(error));
+  };
+
+  const updateUserEmail = async (newEmail) => {
+    try {
+      const user = await auth.currentUser;
+      const query = await user.updateEmail(newEmail);
+      return query;
+    } catch (err) {
+      return err.message;
+    }
   }
 
   return (
-    <AuthContext.Provider value={{currentUser,signInWithEmailAndPassword,signOut,registerWithEmailAndPassword,resetPassword}}>
+    <AuthContext.Provider value={{currentUser,signInWithEmailAndPassword,signOut,registerWithEmailAndPassword,resetPassword,updateUserEmail}}>
       {children}
     </AuthContext.Provider>
   );
