@@ -65,7 +65,7 @@ const Footer = ({children}) => {
       <div className="footer-copyright">
         <div className="container-fluid footer-copyright-structure">
             <div className="copyright">
-              © 2020 Copyright by <Link to="https://www.linkedin.com/in/thibaut-de-maerteleire-4131b0152/" target="_blank" className="author" rel="noopener noreferrer">Thibaut De Maerteleire</Link>
+              © 2020 Copyright by <a href="https://www.linkedin.com/in/thibaut-de-maerteleire-4131b0152/" target="_blank" className="author" rel="noopener noreferrer">Thibaut De Maerteleire</a>
             </div>
             <div className="social-media">
               <Link to="https://www.facebook.com/GraduaatProgrammeren.Arteveldehogeschool/" target="_blank" rel="noopener noreferrer">
